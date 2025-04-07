@@ -756,11 +756,11 @@ namespace GestionNegocio
         {
             return tablaDeMovimientos;
         }
-        public int GetCedulaClienteMovimiento()
+        public long GetCedulaClienteMovimiento()
         {
-            int cedula;
+            long cedula;
 
-            if (int.TryParse(movimientoCedula.Text.Trim(), out cedula))
+            if (long.TryParse(movimientoCedula.Text.Trim(), out cedula))
             {
                 return cedula;
             }
@@ -916,10 +916,10 @@ namespace GestionNegocio
         {
             return correoCliente.Text.Trim();
         }
-        public int GetCedulaCliente()
+        public long GetCedulaCliente()
         {
-            int cedula;
-            if (int.TryParse(cedulaCliente.Text.Trim(), out cedula))
+            long cedula;
+            if (long.TryParse(cedulaCliente.Text.Trim(), out cedula))
             {
                 return cedula;
             }

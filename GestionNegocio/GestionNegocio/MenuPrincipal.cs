@@ -47,7 +47,7 @@ namespace GestionNegocio
 
         #region Constructor y carga del formulario
 
-        public MenuPrincipal(Negocio _negocio, PaletaDeColor _coloresPrograma)
+        public MenuPrincipal(Negocio _negocio)
         {
             InitializeComponent();
             this.AutoScaleMode = AutoScaleMode.Dpi;
@@ -56,7 +56,7 @@ namespace GestionNegocio
             SetNombreNegocio(negocio.GetNombre());
 
             // Aplicar todos los colores del tema
-            this.coloresPrograma = _coloresPrograma;
+            this.coloresPrograma = _negocio.coloresPrograma;
             SetColorNombreNegocio(Color.Transparent, coloresPrograma.colorPrincipal);
             SetColorTextoTotal(Color.Transparent, coloresPrograma.colorSecundario);
             SetColorBotonAgregarProducto(Color.Transparent, coloresPrograma.colorSecundario);
@@ -96,7 +96,7 @@ namespace GestionNegocio
         private decimal montoMovimiento;
         int idMovimiento = 1; // Valor por defecto si no hay movimientos previos
         private string metodoDePago;
-        private int cedulaMovimiento;
+        private long cedulaMovimiento;
         private string fechaMovimiento;
 
         // utilidades
@@ -299,7 +299,7 @@ namespace GestionNegocio
 
         private void botonBuscarMovimientos_Click(object sender, EventArgs e)
         {
-            int cedulaBusquedaMovimientos = GetCedulaClienteMovimiento();
+            long cedulaBusquedaMovimientos = GetCedulaClienteMovimiento();
 
             if (cedulaClienteExiste(cedulaBusquedaMovimientos))
             {
@@ -336,7 +336,7 @@ namespace GestionNegocio
                 string tipoDeMovimiento = GetMovimientoTextoMonto();
                 int id = idSeleccionado;
                 string fecha = GetFechaMovimientoString();
-                int cedulaCliente = GetCedulaClienteMovimiento();
+                long cedulaCliente = GetCedulaClienteMovimiento();
                 string metodoDePago = GetMetodoDePago();
 
                 Movimiento movimientoAEditar = movimientos.FirstOrDefault(m => m.id == idSeleccionado);
@@ -435,7 +435,7 @@ namespace GestionNegocio
 
         #region Pestana clientes
 
-        private int clienteCedula;
+        private long clienteCedula;
         private string clienteNombre;
         private string clienteCorreo;
         private int clienteEdad;
@@ -448,8 +448,9 @@ namespace GestionNegocio
             clienteCorreo = GetCorreoCliente();
             clienteEdad = GetEdadCliente();
             clienteResidencia = GetResidenciaCliente();
+            string contrasena = "12345678"; // placeholder
 
-            Cliente clienteActual = new Cliente(clienteCedula, clienteNombre, clienteCorreo, clienteEdad, clienteResidencia);
+            Cliente clienteActual = new Cliente(clienteCedula, clienteNombre, clienteCorreo, clienteEdad, clienteResidencia, contrasena);
 
             if (clienteCedula != -1 && clienteNombre != "" && clienteCorreo != "" && clienteEdad != -1 && clienteResidencia != "" && ValidarCorreo(clienteCorreo))
             {
@@ -476,7 +477,7 @@ namespace GestionNegocio
             }
         }
 
-        private bool cedulaClienteExiste(int cedula)
+        private bool cedulaClienteExiste(long cedula)
         {
             foreach (Cliente cliente in clientes)
             {
@@ -551,7 +552,7 @@ namespace GestionNegocio
                 return;
             }
 
-            Cliente clienteEditado = new Cliente(GetCedulaCliente(), GetNombreCliente(), GetCorreoCliente(), GetEdadCliente(), GetResidenciaCliente());
+            Cliente clienteEditado = new Cliente(GetCedulaCliente(), GetNombreCliente(), GetCorreoCliente(), GetEdadCliente(), GetResidenciaCliente(), "12345678");
 
             clientes[clientes.IndexOf(clientes.First(c => c.cedula == clienteCedula))] = clienteEditado;
             HerramientasCsv.SobreescribirArchivo(rutaDeArchivoClientes, HerramientasCsv.BingdingListClientesALista(clientes));

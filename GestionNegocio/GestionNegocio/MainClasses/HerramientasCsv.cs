@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.ComponentModel;
+using GestionNegocio.UIclasses;
 
 namespace GestionNegocio.MainClasses
 {
@@ -138,6 +139,7 @@ namespace GestionNegocio.MainClasses
             string correo;
             int edad;
             string residencia;
+            string contrasena;
 
             BindingList<Cliente> clientes = new BindingList<Cliente>();
 
@@ -150,13 +152,61 @@ namespace GestionNegocio.MainClasses
                     correo = linea[2];
                     edad = int.Parse(linea[3]);
                     residencia = linea[4];
+                    contrasena = linea[5];
 
-                    Cliente cliente = new Cliente(cedula, nombre, correo, edad, residencia);
+                    Cliente cliente = new Cliente(cedula, nombre, correo, edad, residencia, contrasena);
                     clientes.Add(cliente);
                 }
             }
 
             return clientes;
+        }
+
+        public static Negocio ListaStringANegocio(List<string[]> lineas, Dictionary<string, PaletaDeColor> temas)
+        {
+            Negocio negocio;
+            PaletaDeColor coloresNegocio;
+
+            if (lineas.Count > 1)
+            {
+                string nombre = lineas[1][0];
+                /* menssageBoxes de debug
+                MessageBox.Show("color: " + lineas[1][1]);
+                MessageBox.Show("Nombre: " + lineas[1][0]);
+                MessageBox.Show("Credencial: " + lineas[1][2]);
+                */
+                if (!String.IsNullOrEmpty(lineas[1][1]))
+                {
+
+                    coloresNegocio = temas[lineas[1][1]];
+                }
+                else 
+                {
+                    coloresNegocio = temas["Gris"];
+                }
+                string credencial = lineas[1][2];
+                negocio = new Negocio(nombre, coloresNegocio, credencial);
+                return negocio;
+            }
+
+            negocio = new Negocio("", temas["Gris"], "");
+            return negocio;
+        }
+        public static string[] NegocioALinea(Negocio negocio)
+        {
+            string[] lineaSalida = new string[3];
+            lineaSalida[0] = negocio.nombre;
+            lineaSalida[1] = negocio.coloresPrograma.nombre;
+            lineaSalida[2] = negocio.credencial;
+
+            return lineaSalida;
+        }
+        public static Negocio GetNegocioDesdeCsv(string rutaDelArchivo, Dictionary<string, PaletaDeColor> temas)
+        {
+            List<string[]> lineas = LeerTodasLasLineas(rutaDelArchivo);
+            Negocio negocio = ListaStringANegocio(lineas, temas);
+
+            return negocio;
         }
 
         public static void AgregarMovimiento(string rutaArchivo, Movimiento movimiento)
@@ -176,6 +226,19 @@ namespace GestionNegocio.MainClasses
             SobreescribirArchivo(rutaArchivo, lineas);
         }
 
+        public static void AgregarConfiguracionNegocio(string rutaArchivo, Negocio negocio)
+        {
+            List<string[]> lineas = LeerTodasLasLineas(rutaArchivo);
+            string[] nuevaLinea = new string[3];
+
+            nuevaLinea[0] = negocio.nombre;
+            nuevaLinea[1] = negocio.coloresPrograma.nombre;
+            nuevaLinea[2] = negocio.credencial;
+
+            lineas.Add(nuevaLinea);
+            SobreescribirArchivo(rutaArchivo, lineas);
+        }
+
         public static void AgregarCliente(string rutaArchivo, Cliente cliente)
         {
             List<string[]> lineas = LeerTodasLasLineas(rutaArchivo);
@@ -186,6 +249,7 @@ namespace GestionNegocio.MainClasses
             nuevaLinea[2] = cliente.correo;
             nuevaLinea[3] = cliente.edad.ToString();
             nuevaLinea[4] = cliente.residencia;
+            nuevaLinea[5] = cliente.contrasena;
 
             lineas.Add(nuevaLinea);
             SobreescribirArchivo(rutaArchivo, lineas);
@@ -238,6 +302,7 @@ namespace GestionNegocio.MainClasses
             nuevaLinea[2] = cliente.correo;
             nuevaLinea[3] = cliente.edad.ToString();
             nuevaLinea[4] = cliente.residencia;
+            nuevaLinea[5] = cliente.contrasena;
 
             return nuevaLinea;
         }
@@ -274,6 +339,7 @@ namespace GestionNegocio.MainClasses
                 nuevaLinea[2] = cliente.correo;
                 nuevaLinea[3] = cliente.edad.ToString();
                 nuevaLinea[4] = cliente.residencia;
+                nuevaLinea[5] = cliente.contrasena;
                 lineas.Add(nuevaLinea);
             }
 

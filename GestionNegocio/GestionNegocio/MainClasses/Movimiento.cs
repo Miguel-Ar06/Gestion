@@ -13,12 +13,12 @@ namespace GestionNegocio.MainClasses
         public string descripcion { get; set; }
         public string tipoDeMovimiento { get; set; }
         public string fecha { get; set; }
-        public int cedulaCliente { get; set; }
+        public long cedulaCliente { get; set; }
         public string metodoDePago { get; set; }
         public bool ingreso { get; set; }
 
         // constructor
-        public Movimiento(decimal _monto, string descripcion, string _tipoDeMovimiento, bool _ingreso, int _id, string _fecha, int _cedulaCliente, string _metodoDePago)
+        public Movimiento(decimal _monto, string descripcion, string _tipoDeMovimiento, bool _ingreso, int _id, string _fecha, long _cedulaCliente, string _metodoDePago)
         {
             this.monto = _monto;
             this.descripcion = descripcion;

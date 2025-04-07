@@ -3,23 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GestionNegocio.UIclasses;
 
 namespace GestionNegocio.MainClasses
 {
     public class Negocio
     {
-        private string nombre;
-        private int fundacion;
-        private string tipo;
-        private string rif;
-        private bool censado;
-        private bool sancionado;
-        private bool privado;
+        private string Nombre;
+        public string nombre
+        {
+            get { return Nombre; }
+            set { Nombre = value; }
+        }
+        //private int fundacion;
+        //private string tipo;
+        //private string rif;
+        //private bool censado;
+        //private bool sancionado;
+        //private bool privado;
+        private PaletaDeColor ColoresPrograma;
+        public PaletaDeColor coloresPrograma
+        {
+            get { return ColoresPrograma; }
+            set { ColoresPrograma = value; }
+        }
+        private string Credencial;
+        public string credencial
+        {
+            get { return Credencial; }
+            set { Credencial = value; }
+        }
+
 
         // constructor
-        public Negocio(string nombre)
+        public Negocio(string nombre, PaletaDeColor paleta, string credencial)
         {
-            this.nombre = nombre;
+            this.Nombre = nombre;
+            this.ColoresPrograma = paleta;
+            this.Credencial = credencial;
         }
 
         // getters
@@ -27,6 +48,7 @@ namespace GestionNegocio.MainClasses
         {
             return nombre;
         }
+        /*
         public int GetFundacion()
         {
             return fundacion;
@@ -81,5 +103,6 @@ namespace GestionNegocio.MainClasses
         {
             this.sancionado = _sancionado;
         }
+        */
     }
 }

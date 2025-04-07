@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Tareasprog2yEdD\\GestionNegocio\\GestionNegocio\\GestionNegocio.csproj",
+      "projectUniqueName": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\GestionNegocio.csproj",
       "projectName": "GestionNegocio",
-      "projectPath": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Tareasprog2yEdD\\GestionNegocio\\GestionNegocio\\GestionNegocio.csproj",
+      "projectPath": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\GestionNegocio.csproj",
       "packagesPath": "C:\\Users\\nombr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Tareasprog2yEdD\\GestionNegocio\\GestionNegocio\\obj\\",
+      "outputPath": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

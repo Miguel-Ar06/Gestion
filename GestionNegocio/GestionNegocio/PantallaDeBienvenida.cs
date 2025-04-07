@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using GestionNegocio.MainClasses;
 using GestionNegocio.UIclasses;
 
@@ -5,12 +6,21 @@ namespace GestionNegocio
 {
     public partial class PantallaDeBienvenida : Form
     {
+        private static string rutaDeLaAplicacion = AppDomain.CurrentDomain.BaseDirectory;
+        private static string rutaArchivoNegocio = Path.Combine(rutaDeLaAplicacion, "Resources", "data", "negocioConfig.csv");
+        private static string rutaDeArchivoClientes = Path.Combine(rutaDeLaAplicacion, "Resources", "data", "clientes.csv");
+
         private Negocio negocio;
+        private bool negocioExiste;
+
+        private bool modoAdmin = true;
+
+        private static BindingList<Cliente> clientes = HerramientasCsv.ListaStringsAClientes(HerramientasCsv.LeerTodasLasLineas(rutaDeArchivoClientes));
 
         #region paleta de colores del programa y diccionario de temas
 
         public PaletaDeColor coloresPrograma;
-        private Dictionary<string, PaletaDeColor> temas = new Dictionary<string, PaletaDeColor>();
+        public static Dictionary<string, PaletaDeColor> temas = new Dictionary<string, PaletaDeColor>();
 
         public PantallaDeBienvenida()
         {
@@ -26,6 +36,23 @@ namespace GestionNegocio
             temas.Add("Violeta", new PaletaDeColor("Violeta", Color.FromArgb(102, 0, 204), Color.FromArgb(153, 0, 153), Color.FromArgb(255, 255, 255)));
             temas.Add("Negro", new PaletaDeColor("Negro", Color.FromArgb(32, 32, 32), Color.FromArgb(64, 64, 64), Color.FromArgb(255, 255, 255)));
             temas.Add("Gris", new PaletaDeColor("Gris", Color.FromArgb(96, 96, 96), Color.FromArgb(160, 160, 160), Color.FromArgb(255, 255, 255)));
+
+            // inicializar negocio desde el csv
+            negocio = HerramientasCsv.GetNegocioDesdeCsv(rutaArchivoNegocio, temas);
+
+            negocioExiste = !String.IsNullOrEmpty(negocio.nombre);
+        }
+
+        private void PantallaDeBienvenida_Load(object sender, EventArgs e)
+        {
+            if (negocioExiste == false)
+            {
+                SetModoIngresoAAdmin(true, !negocioExiste);
+            }
+            else
+            {
+                SetModoIngresoAAdmin(false, !negocioExiste);
+            }
         }
 
         string colorSeleccionado;
@@ -53,34 +80,118 @@ namespace GestionNegocio
 
 
         #region eventos
-        private void botonBienvenida_Click(object sender, EventArgs e)
+        private void botonRegistrarse_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Boton bienvenida clickeado");
+            long clienteCedula = GetCedula();
+            string clienteNombre = GetNombre();
+            string clienteCorreo = GetCorreo();
+            int clienteEdad = GetEdad();
+            string clienteResidencia = GetResidencia();
+            string clienteContrasena = GetContrasena();
 
-            // en caso de que jamas se toque el selector de tema
-            colorSeleccionado = GetItemTextoSelectorColor();
-            if (temas.ContainsKey(colorSeleccionado) == false)
-            {
-                coloresPrograma = temas["Gris"];
-                Console.WriteLine("Color del tema establecido a color por defecto gris");
-            }
+            Cliente clienteActual = new Cliente(clienteCedula, clienteNombre, clienteCorreo, clienteEdad, clienteResidencia, clienteContrasena);
 
-            if (GetNombreNegocio() == "")
+            if (clienteCedula != -1 && clienteNombre != "" && clienteCorreo != "" && clienteEdad != -1 && clienteResidencia != "" && ValidarCorreo(clienteCorreo))
             {
-                MessageBox.Show("El nombre no puede estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (cedulaClienteExiste(clienteCedula) == false)
+                {
+                    clientes.Add(clienteActual);
+                    HerramientasCsv.AgregarCliente(rutaDeArchivoClientes, clienteActual);
+                    Console.WriteLine("Cliente agregado");
+                    LimpiarCedula();
+                    LimpiarNombre();
+                    LimpiarCorreo();
+                    LimpiarEdad();
+                    LimpiarResidencia();
+                }
+                else
+                {
+                    MessageBox.Show("El cliente ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                negocio = new Negocio(GetNombreNegocio());
-                Console.WriteLine("Ventana de menu abierta");
-                MenuPrincipal menuPrincipal = new MenuPrincipal(negocio, coloresPrograma);
-                menuPrincipal.Show();
-
-                this.Hide();
-                Console.WriteLine("Ventana de bienvenida cerrada");
+                MessageBox.Show("Rellene los campos correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("Error, cliente no agregado");
             }
         }
 
+        private bool cedulaClienteExiste(long cedula)
+        {
+            foreach (Cliente cliente in clientes)
+            {
+                if (cliente.cedula == cedula)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void botonAdminCliente_Click(object sender, EventArgs e)
+        {
+            if (modoAdmin == true)
+            {
+                SetModoIngresoAAdmin(false, !negocioExiste);
+                modoAdmin = false;
+            }
+            else
+            {
+                SetModoIngresoAAdmin(true, !negocioExiste);
+                modoAdmin = true;
+            }
+        }
+
+        private void botonIniciarSesion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void botonIngresar_Click(object sender, EventArgs e)
+        {
+            if (!negocioExiste)
+            {
+                colorSeleccionado = GetItemTextoSelectorColor();
+                if (temas.ContainsKey(colorSeleccionado) == false)
+                {
+                    coloresPrograma = temas["Gris"];
+                    Console.WriteLine("Color del tema establecido a color por defecto gris");
+                }
+
+                if (GetNombreNegocio() == "" || GetCredencial() == "")
+                {
+                    MessageBox.Show("Rellene los campos indicados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    coloresPrograma = temas[colorSeleccionado];
+                    negocio = new Negocio(GetNombreNegocio(), coloresPrograma, GetCredencial());
+                    Console.WriteLine("Ventana de menu abierta");
+                    MenuPrincipal menuPrincipal = new MenuPrincipal(negocio);
+                    HerramientasCsv.AgregarConfiguracionNegocio(rutaArchivoNegocio, negocio);
+                    menuPrincipal.Show();
+
+                    this.Hide();
+                    Console.WriteLine("Ventana de bienvenida cerrada");
+                }
+            }
+            else
+            {
+                Negocio negocioActual = HerramientasCsv.GetNegocioDesdeCsv(rutaArchivoNegocio, temas);
+                string credencialIntroducida = GetCredencial();
+
+                if (credencialIntroducida == negocioActual.credencial)
+                {
+                    MenuPrincipal menuPrincipal = new MenuPrincipal(negocio);
+                    menuPrincipal.Show();
+                    this.Hide();
+                }
+            }
+
+
+        }
+
         #endregion
+
     }
 }

@@ -79,6 +79,25 @@ dividir el programa en version admin y version para clientes, la del admin seria
 - [ ] integrar "metodos de pago", si queremos ponernos exoticos podemos pedir los datos de la tarjeta (numero, fecha, cvv) y validarlo con el algoritmo de luhn (eso se copypastea) para que sea un numero valido
 - [ ] crear un archivo llamado negocio.csv para guardar ahi el nombre del negocio, el color y que se pueda cambiar desde la pestana ajustes en la vista de administrador
 
+---
+especificaciones del doc
+
+Especificaciones del Sistema para Tienda 
+Desarrollar un sistema integral para gestionar las operaciones de una tienda en línea, incluyendo administración de productos, gestión de clientes, pedidos, promociones, niveles de clientes, regalos y cupones.
+Requisitos Funcionales
+1. Módulo de Administración
+•	Gestión de productos: Registro y actualización de productos (nombre, descripción, precios, stock, imágenes).
+•	Control de stock: Manejo automatizado de inventarios y alertas para reposición.
+•	Gestión de pedidos: Visualización, seguimiento, actualización y procesamiento de pedidos recibidos.
+•	Gestión de descuentos y promociones: Creación y administración de descuentos, ofertas temporales y promociones.
+•	Gestión de niveles y recompensas: Administración de niveles de cliente, configuración de condiciones para subir de nivel, asignación de regalos y cupones.
+2. Módulo de Clientes
+•	Registro y autenticación: Registro de nuevos usuarios, login seguro con validación.
+•	Perfil del cliente: Información personal, historial de compras, nivel actual, progreso hacia próximo nivel.
+•	Carrito de compras: Capacidad de añadir, modificar o eliminar productos antes de confirmar compra.
+•	Compras: Proceso de compra seguro, integración con métodos de pago.
+•	Sistema de niveles: Clientes suben de nivel según cantidad o valor de compras.
+•	Recompensas automáticas: Entrega automática de regalos o cupones al alcanzar ciertos niveles.
 
 
 

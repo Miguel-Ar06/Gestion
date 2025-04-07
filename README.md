@@ -19,6 +19,14 @@ a-->d["etc"]
 bueno sucias he tratado que el codigo sea lo mas entendible y/o mantenible a pesar de ser de hace como 2 meses
 la monda esta organizada asi:
 
+```mermaid
+graph LR;
+a["vista de admin"]-->b["movimientos, productos, clientes, ajustes, promociones etc"];
+e["vista de cliente"]-->c["comprar, carrito, pagar, perfil"]
+f["ventana de inicio"]--"default"-->e
+f--"boton y clave"-->a
+```
+
 ### /MainClasses
 en este archivo estan todas las clases jugosas para la funcionalidad, clientes, movimientos y asi, y el
 superdupermegaimportante HerramientasCsv para que no nos partamos la cabeza (actualmente solo tiene para
@@ -54,10 +62,23 @@ sin tener que actualizar manualmente, lo unico es que genera la data tal cual la
 demas esta decir que en los archivos `.designer.cs` hay getters y setters para alterar o obtener cosas del formulario xd
 
 ## Cositas que faltan
+dividir el programa en version admin y version para clientes, la del admin seria la que ya esta hecha pero hay que cambiar cositas y agregar cositas
+
 - [ ] crear un .csv para los productos
 - [ ] implementar pestana de trabajadores y personal (con su csv)
-      
-(lleno esta parte cuando lea los demas requisitos, quiero dormir xd)
+- [ ] agregar un campo para imagenes de los productos
+- [ ] implementar un combobox en los movimientos para seleccionar el producto a comprar o vender (y restarlo o sumarlo del stock/cantidad)
+- [ ] agregar pestana pedidos con monitoreo (pendiente/enviado/entregado)
+- [ ] agregar pestana promociones donde se pueda alterar el precio de productos bajo ciertas condiciones, aqui tambien se va a llevar seguimiento de los cupones, descuentos y su creacion
+- [ ] implementar sistema de niveles para los clientes, que suban de nivel con mas compras y que ganen cupones
+- [ ] crear todo un modulo de clientes, enlazado directamente a los archivos clientes.csv y movimientos.csv y productos.csv donde el cliente pueda ver la informacion de sus productos adquiridos, nivel, cupones disponibles, todo tiene que manejarse mediante archivos para poder pasar la informacion entre perfiles
+- [ ] implementar un registro/inicio de sesion para clientes, esta sera la vista principal donde inicia el programa
+- [ ] agregar el campo "contrasena" al clientes.csv para poder validar su inicio de sesion o cuando se registren (si se van a registrar pedirles que ingresen dos veces la contrasena como se suele hacer)
+- [ ] el administrador accede a la version de admin mediante un boton y una constrasena x que pongamos nosotros en la pantalla principal
+- [ ] entrega automatica de cupones y recompensas al subir de nivel (literal un pase de batalla)
+- [ ] integrar "metodos de pago", si queremos ponernos exoticos podemos pedir los datos de la tarjeta (numero, fecha, cvv) y validarlo con el algoritmo de luhn (eso se copypastea) para que sea un numero valido
+- [ ] crear un archivo llamado negocio.csv para guardar ahi el nombre del negocio, el color y que se pueda cambiar desde la pestana ajustes en la vista de administrador
+
 
 
 

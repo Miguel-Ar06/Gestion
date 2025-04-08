@@ -449,7 +449,7 @@ namespace GestionNegocio
             clienteEdad = GetEdadCliente();
             clienteResidencia = GetResidenciaCliente();
 
-            Cliente clienteActual = new Cliente(clienteCedula, clienteNombre, clienteCorreo, clienteEdad, clienteResidencia, 1 ,0);
+            Cliente clienteActual = new Cliente(clienteCedula, clienteNombre, clienteCorreo, clienteEdad, clienteResidencia, 1, 0);
 
             if (clienteCedula != -1 && clienteNombre != "" && clienteCorreo != "" && clienteEdad != -1 && clienteResidencia != "" && ValidarCorreo(clienteCorreo))
             {
@@ -552,7 +552,7 @@ namespace GestionNegocio
                 return;
             }
 
-            Cliente clienteEditado = new Cliente(GetCedulaCliente(), GetNombreCliente(), GetCorreoCliente(), GetEdadCliente(), GetResidenciaCliente(),GetNivelHistorial() ,  GetXPClientesHistorial() );
+            Cliente clienteEditado = new Cliente(GetCedulaCliente(), GetNombreCliente(), GetCorreoCliente(), GetEdadCliente(), GetResidenciaCliente(), GetNivelHistorial(), GetXPClientesHistorial());
 
             clientes[clientes.IndexOf(clientes.First(c => c.cedula == clienteCedula))] = clienteEditado;
             HerramientasCsv.SobreescribirArchivo(rutaDeArchivoClientes, HerramientasCsv.BingdingListClientesALista(clientes));
@@ -681,6 +681,11 @@ namespace GestionNegocio
             {
                 LabelClienteVersionAdminStaged.Text = "ID inválido";
             }
+        }
+
+        private void BuscarClientes_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarDataGrid(tablaClientes, BuscarClientes.Text);
         }
     }
 }

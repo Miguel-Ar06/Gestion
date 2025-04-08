@@ -14,8 +14,8 @@ namespace GestionNegocio.MainClasses
         public string correo { get; set; }
         public int edad { get; set; }
         public string residencia { get; set; }
-        private int xp { get; set; }
-        private int nivel { get; set; }
+        public int xp { get; set; }
+        public int nivel { get; set; }
 
         public Cliente(int _cedula, string _nombre, string _correo, int _edad, string _residencia, int _nivel, int _xp)
         {

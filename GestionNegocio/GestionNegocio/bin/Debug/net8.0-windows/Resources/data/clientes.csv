@@ -1,4 +1,3 @@
-nombre,correo,edad,pais,contrasena
 1,Alice Williams,alice.williams@example.com,25,Australia,12345678
 2,Bob Smith,bob.smith@example.com,30,Estados Unidos,12345678
 3,Charlie Johnson,charlie.johnson@example.com,22,Reino Unido,12345678
@@ -100,3 +99,4 @@ nombre,correo,edad,pais,contrasena
 99,Ursula Jones,ursula.jones99@example.com,29,Dinamarca,12345678
 100,Vincent Jones,vincent.jones100@example.com,30,Finlandia,12345678
 33333,miguel,miguel@gmail.com,18,wewe,1234
+

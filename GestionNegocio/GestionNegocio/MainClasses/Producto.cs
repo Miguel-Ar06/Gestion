@@ -8,22 +8,45 @@ namespace GestionNegocio.MainClasses
 {
     public class Producto
     {
-        public string nombre {  get; set; }
-        public int id { get; set; }
-        public decimal precio { get; set; }
-        public string? descripcion { get; set; }
-        public int cantidad { get; set; }
-        public string? marca { get; set; }
+        private int Id;
+        public int id 
+        {
+            get { return Id; }
+            set { Id = value; }
+        }
+        private string Nombre;
+        public string nombre 
+        {  
+            get { return Nombre; }
+            set { Nombre = value; }
+        }
+        private decimal Precio;
+        public decimal precio 
+        { 
+            get { return Precio; }
+            set { Precio = value; }
+        }
+        private string? Descripcion;
+        public string? descripcion 
+        {
+            get { return Descripcion; }
+            set { Descripcion = value; }
+        }
+        private int Cantidad;
+        public int cantidad 
+        { 
+            get { return Cantidad; }
+            set { Cantidad = value; }
+        }
 
         // constructor
-        public Producto(string _nombre, int _id, decimal _precio, string? _descripcion, int _cantidad, string _marca)
+        public Producto(int _id, string _nombre, decimal _precio, string? _descripcion, int _cantidad )
         {
-            this.nombre = _nombre;
             this.id = _id;
+            this.nombre = _nombre;
             this.precio = _precio;
             this.descripcion = _descripcion;
             this.cantidad = _cantidad;
-            this.marca = _marca;
         }
     }
 }

@@ -78,10 +78,16 @@ namespace GestionNegocio
             pestanaAjustes = new TabPage();
             textoProximamenteAjustes = new Label();
             pagePrueba = new TabPage();
+            label2 = new Label();
+            HeaderClienteXP = new Label();
             XPCedulaInput = new TextBox();
             label1 = new Label();
-            HeaderClienteXP = new Label();
-            label2 = new Label();
+            label3 = new Label();
+            BotonProgresoClienteAdministrador = new Button();
+            pictureBox1 = new PictureBox();
+            PanelProgresoVistaAdmin = new Panel();
+            progressBar1 = new ProgressBar();
+            ProgresBarHeaderAdmin = new Label();
             controlPestanas.SuspendLayout();
             pestanaCobros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tablaDeMovimientos).BeginInit();
@@ -92,6 +98,8 @@ namespace GestionNegocio
             pestanaFacturas.SuspendLayout();
             pestanaAjustes.SuspendLayout();
             pagePrueba.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            PanelProgresoVistaAdmin.SuspendLayout();
             SuspendLayout();
             // 
             // nombreNegocio
@@ -625,7 +633,11 @@ namespace GestionNegocio
             // 
             // pagePrueba
             // 
+            pagePrueba.Controls.Add(PanelProgresoVistaAdmin);
             pagePrueba.Controls.Add(label2);
+            pagePrueba.Controls.Add(pictureBox1);
+            pagePrueba.Controls.Add(BotonProgresoClienteAdministrador);
+            pagePrueba.Controls.Add(label3);
             pagePrueba.Controls.Add(HeaderClienteXP);
             pagePrueba.Controls.Add(XPCedulaInput);
             pagePrueba.Controls.Add(label1);
@@ -637,11 +649,30 @@ namespace GestionNegocio
             pagePrueba.Text = "Nivel Clientes";
             pagePrueba.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(585, 414);
+            label2.Name = "label2";
+            label2.Size = new Size(388, 28);
+            label2.TabIndex = 21;
+            label2.Text = "No ha seleccionado a ningun cliente aún.";
+            // 
+            // HeaderClienteXP
+            // 
+            HeaderClienteXP.AutoSize = true;
+            HeaderClienteXP.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            HeaderClienteXP.Location = new Point(98, 283);
+            HeaderClienteXP.Name = "HeaderClienteXP";
+            HeaderClienteXP.Size = new Size(200, 28);
+            HeaderClienteXP.TabIndex = 20;
+            HeaderClienteXP.Text = "Cliente Seleccionado";
+            // 
             // XPCedulaInput
             // 
             XPCedulaInput.BorderStyle = BorderStyle.FixedSingle;
             XPCedulaInput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            XPCedulaInput.Location = new Point(46, 213);
+            XPCedulaInput.Location = new Point(55, 213);
             XPCedulaInput.Name = "XPCedulaInput";
             XPCedulaInput.PlaceholderText = "Cedula del cliente";
             XPCedulaInput.Size = new Size(308, 34);
@@ -652,30 +683,66 @@ namespace GestionNegocio
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(76, 62);
+            label1.Location = new Point(84, 68);
             label1.Name = "label1";
             label1.Size = new Size(251, 28);
             label1.TabIndex = 18;
             label1.Text = "Ingrese Cedula del Cliente";
             // 
-            // HeaderClienteXP
+            // label3
             // 
-            HeaderClienteXP.AutoSize = true;
-            HeaderClienteXP.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            HeaderClienteXP.Location = new Point(98, 290);
-            HeaderClienteXP.Name = "HeaderClienteXP";
-            HeaderClienteXP.Size = new Size(200, 28);
-            HeaderClienteXP.TabIndex = 20;
-            HeaderClienteXP.Text = "Cliente Seleccionado";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Symbol", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Location = new Point(119, 341);
+            label3.Name = "label3";
+            label3.Size = new Size(84, 25);
+            label3.TabIndex = 22;
+            label3.Text = "Nombre";
             // 
-            // label2
+            // BotonProgresoClienteAdministrador
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(481, 266);
-            label2.Name = "label2";
-            label2.Size = new Size(145, 28);
-            label2.TabIndex = 21;
-            label2.Text = "Proximamente";
+            BotonProgresoClienteAdministrador.Location = new Point(55, 414);
+            BotonProgresoClienteAdministrador.Name = "BotonProgresoClienteAdministrador";
+            BotonProgresoClienteAdministrador.Size = new Size(308, 83);
+            BotonProgresoClienteAdministrador.TabIndex = 23;
+            BotonProgresoClienteAdministrador.Text = "Ver informacion";
+            BotonProgresoClienteAdministrador.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.descarga;
+            pictureBox1.Location = new Point(550, 99);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(469, 281);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 24;
+            pictureBox1.TabStop = false;
+            // 
+            // PanelProgresoVistaAdmin
+            // 
+            PanelProgresoVistaAdmin.Controls.Add(ProgresBarHeaderAdmin);
+            PanelProgresoVistaAdmin.Controls.Add(progressBar1);
+            PanelProgresoVistaAdmin.Location = new Point(451, 34);
+            PanelProgresoVistaAdmin.Name = "PanelProgresoVistaAdmin";
+            PanelProgresoVistaAdmin.Size = new Size(634, 491);
+            PanelProgresoVistaAdmin.TabIndex = 25;
+            // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(99, 90);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(467, 51);
+            progressBar1.TabIndex = 0;
+            // 
+            // ProgresBarHeaderAdmin
+            // 
+            ProgresBarHeaderAdmin.AutoSize = true;
+            ProgresBarHeaderAdmin.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ProgresBarHeaderAdmin.Location = new Point(247, 45);
+            ProgresBarHeaderAdmin.Name = "ProgresBarHeaderAdmin";
+            ProgresBarHeaderAdmin.Size = new Size(63, 28);
+            ProgresBarHeaderAdmin.TabIndex = 21;
+            ProgresBarHeaderAdmin.Text = "Nivel:";
             // 
             // MenuPrincipal
             // 
@@ -705,6 +772,9 @@ namespace GestionNegocio
             pestanaAjustes.PerformLayout();
             pagePrueba.ResumeLayout(false);
             pagePrueba.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            PanelProgresoVistaAdmin.ResumeLayout(false);
+            PanelProgresoVistaAdmin.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1094,5 +1164,11 @@ namespace GestionNegocio
         private Label label1;
         private Label label2;
         private Label HeaderClienteXP;
+        private Label label3;
+        private Button BotonProgresoClienteAdministrador;
+        private Panel PanelProgresoVistaAdmin;
+        private PictureBox pictureBox1;
+        private Label ProgresBarHeaderAdmin;
+        private ProgressBar progressBar1;
     }
 }

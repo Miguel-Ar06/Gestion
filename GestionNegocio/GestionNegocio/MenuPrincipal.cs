@@ -27,13 +27,14 @@ namespace GestionNegocio
         private static string rutaDeAplicacion = AppDomain.CurrentDomain.BaseDirectory;
         private static string rutaDeArchivoClientes = Path.Combine(rutaDeAplicacion, "Resources", "data", "clientes.csv");
         private static string rutaDeArchivoMovimientos = Path.Combine(rutaDeAplicacion, "Resources", "data", "movimientos.csv");
+        private static string rutaDeArchivoProductos = Path.Combine(rutaDeAplicacion, "Resources", "data", "Productos.csv");
 
         // datagrids y manipulacion
         private static BindingList<Movimiento> movimientos = HerramientasCsv.ListaStringsAMovimientos(HerramientasCsv.LeerTodasLasLineas(rutaDeArchivoMovimientos));
         private DataGridView _tablaDeMovimientos;
         private BindingSource registroDeMovimientos = new BindingSource();
 
-        private static BindingList<Producto> productos = new BindingList<Producto>(); // pendiente el archivo csv
+        private static BindingList<Producto> productos = HerramientasCsv.ListaStringsAProductos(HerramientasCsv.LeerTodasLasLineas(rutaDeArchivoProductos));
         private DataGridView _tablaInventario;
         private BindingSource registroInventario = new BindingSource();
 
@@ -270,7 +271,7 @@ namespace GestionNegocio
 
                     HerramientasCsv.SobreescribirArchivo(rutaDeArchivoMovimientos, HerramientasCsv.BingdingListMovimientosALista(movimientos));
                     Console.WriteLine("Movimiento con ID " + idSeleccionado + " eliminado");
-                    
+
                     if (_tablaDeMovimientos.RowCount == movimientos.Count)
                     {
                         SetMontoTotal(ContarTotalMovimientos());
@@ -387,6 +388,10 @@ namespace GestionNegocio
         private int idDelProducto = 0;
 
         // eventos
+        private bool NombreProductoExiste(string nombreProducto)
+        {
+            return productos.Any(p => p.nombre.Equals(nombreProducto, StringComparison.OrdinalIgnoreCase));
+        }
 
         private void botonAgregarProducto_Click(object sender, EventArgs e)
         {
@@ -394,27 +399,79 @@ namespace GestionNegocio
             cantidadDelProducto = GetCantidadProducto();
             precioDelProducto = GetPrecioProducto();
             descripcionDelProducto = GetDescripcionProducto();
-            marcaDelProducto = GetMarcaProdudcto();
 
-            if ((nombreDelProducto != "") && (cantidadDelProducto != -1) && (precioDelProducto != -1))
+            if (productos.Count > 0)
             {
-                productos.Add(new Producto(nombreDelProducto, idDelProducto, precioDelProducto, descripcionDelProducto, cantidadDelProducto, marcaDelProducto));
-                Console.WriteLine("Producto agregado");
+                idDelProducto = productos.Max(p => p.id) + 1;
+            }
 
-                LimpiarCantidadProducto();
-                LimpiarDescripcionProducto();
-                LimpiarPrecioProducto();
-                LimpiarMarcaProducto();
-                LimpiarNombreProducto();
+            if (!string.IsNullOrEmpty(nombreDelProducto) && cantidadDelProducto != -1 && precioDelProducto != -1)
+            {
+                if (!productos.Any(p => p.nombre.Equals(nombreDelProducto, StringComparison.OrdinalIgnoreCase)))
+                {
+                    Producto nuevoProducto = new Producto(idDelProducto, nombreDelProducto, precioDelProducto, descripcionDelProducto, cantidadDelProducto);
+                    productos.Add(nuevoProducto);
+                    Console.WriteLine("Producto agregado");
 
-                idDelProducto++;
+                    GuardarProductoEnCsv(rutaDeArchivoProductos, nuevoProducto);
+                    LimpiarCantidadProducto();
+                    LimpiarDescripcionProducto();
+                    LimpiarPrecioProducto();
+                    LimpiarNombreProducto();
+
+                    idDelProducto++;
+                }
+                else
+                {
+                    MessageBox.Show($"El nombre de producto '{nombreDelProducto}' ya existe. Introduzca uno diferente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine("Error: nombre de producto duplicado.");
+                }
             }
             else
             {
                 MessageBox.Show("Rellene los campos obligatorios *", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine("Error, producto no agregado");
+                Console.WriteLine("Error: producto no agregado.");
+            }
+
+        }
+        private void botonBuscarProducto_Click(object sender, EventArgs e)
+        {
+            int idBuscado = GetIdProducto(); 
+
+            if (idBuscado != -1)
+            {
+                Producto productoBuscado = productos.FirstOrDefault(p => p.id == idBuscado);
+
+                if (productoBuscado != null)
+                {
+                    nombreProducto.Text = productoBuscado.nombre;
+                    cantidadProducto.Text = productoBuscado.cantidad.ToString();
+                    precioProducto.Text = productoBuscado.precio.ToString("F2");
+                    descripcionProducto.Text = productoBuscado.descripcion;
+                }
+                else
+                {
+                    MessageBox.Show("El producto no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+        private void GuardarProductoEnCsv(string rutaArchivo, Producto producto)
+        {
+            try
+            {
+                using (StreamWriter escritor = new StreamWriter(rutaArchivo, append: true))
+                {
+                    string nuevaLinea = $"{producto.id},{producto.nombre},{producto.precio},{producto.descripcion},{producto.cantidad}";
+                    escritor.WriteLine(nuevaLinea);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar el producto en el archivo CSV: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void botonEliminarProducto_Click(object sender, EventArgs e)
         {
@@ -424,6 +481,8 @@ namespace GestionNegocio
 
                 productos.RemoveAt(indiceFilaSeleccionada);
                 Console.WriteLine("Producto " + indiceFilaSeleccionada + " eliminado");
+                HerramientasCsv.SobreescribirArchivo(rutaDeArchivoProductos, HerramientasCsv.BingdingListProductosALista(productos));
+
             }
             else
             {
@@ -565,6 +624,5 @@ namespace GestionNegocio
             Application.Exit(); // Cierra la aplicación por completo
         }
 
-        
     }
 }

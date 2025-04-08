@@ -162,6 +162,35 @@ namespace GestionNegocio.MainClasses
             return clientes;
         }
 
+        public static BindingList<Producto> ListaStringsAProductos(List<string[]> lineas)
+        {
+            int id;
+            string nombre;
+            decimal precio;
+            string descripcion;
+            int cantidad;
+
+            BindingList<Producto> productos = new BindingList<Producto>();
+
+            foreach (string[] linea in lineas)
+            {
+                if (linea.Length >= 5 && int.TryParse(linea[0], out id))
+                {
+                    id = int.Parse(linea[0]);
+                    nombre = linea[1];
+                    precio = decimal.Parse(linea[2]);
+                    descripcion = linea[3];
+                    cantidad = int.Parse(linea[4]);
+
+
+                    Producto producto = new Producto(id, nombre, precio, descripcion, cantidad);
+                    productos.Add(producto);
+                }
+            }
+
+            return productos;
+        }
+
         public static Negocio ListaStringANegocio(List<string[]> lineas, Dictionary<string, PaletaDeColor> temas)
         {
             Negocio negocio;
@@ -208,7 +237,6 @@ namespace GestionNegocio.MainClasses
 
             return negocio;
         }
-
         public static void AgregarMovimiento(string rutaArchivo, Movimiento movimiento)
         {
             List<string[]> lineas = LeerTodasLasLineas(rutaArchivo);
@@ -242,7 +270,7 @@ namespace GestionNegocio.MainClasses
         public static void AgregarCliente(string rutaArchivo, Cliente cliente)
         {
             List<string[]> lineas = LeerTodasLasLineas(rutaArchivo);
-            string[] nuevaLinea = new string[5];
+            string[] nuevaLinea = new string[6];
 
             nuevaLinea[0] = cliente.cedula.ToString();
             nuevaLinea[1] = cliente.nombre;
@@ -255,6 +283,20 @@ namespace GestionNegocio.MainClasses
             SobreescribirArchivo(rutaArchivo, lineas);
         }
 
+        public static void AgregarProducto(string rutaArchivo, Producto producto)
+        {
+            List<string[]> lineas = LeerTodasLasLineas(rutaArchivo);
+           
+            string[] nuevaLinea = new string[5];
+            nuevaLinea[0] = producto.id.ToString();
+            nuevaLinea[1] = producto.nombre;
+            nuevaLinea[2] = producto.precio.ToString();
+            nuevaLinea[3] = producto.descripcion;
+            nuevaLinea[4] = producto.cantidad.ToString();
+
+            lineas.Add(nuevaLinea);
+            SobreescribirArchivo(rutaArchivo, lineas);
+        }
         public static void SobreescribirLinea(string rutaArchivo, string id, string[] nuevaLinea)
         {
             List<string[]> lineas = LeerTodasLasLineas(rutaArchivo);
@@ -307,6 +349,20 @@ namespace GestionNegocio.MainClasses
             return nuevaLinea;
         }
 
+        public static string[] ProductoALinea(Producto producto)
+        {
+            string[] nuevaLinea = new string[4];
+
+            nuevaLinea[0] = producto.id.ToString();
+            nuevaLinea[1] = producto.nombre;
+            nuevaLinea[2] = producto.precio.ToString();
+            nuevaLinea[3] = producto.descripcion;
+            nuevaLinea[4] = producto.cantidad.ToString();
+
+            return nuevaLinea;
+        }
+
+
         public static List<string[]> BingdingListMovimientosALista(BindingList<Movimiento> movimientos)
         {
             List<string[]> lineas = new List<string[]>();
@@ -333,13 +389,31 @@ namespace GestionNegocio.MainClasses
 
             foreach (Cliente cliente in clientes)
             {
-                string[] nuevaLinea = new string[5];
+                string[] nuevaLinea = new string[6];
                 nuevaLinea[0] = cliente.cedula.ToString();
                 nuevaLinea[1] = cliente.nombre;
                 nuevaLinea[2] = cliente.correo;
                 nuevaLinea[3] = cliente.edad.ToString();
                 nuevaLinea[4] = cliente.residencia;
                 nuevaLinea[5] = cliente.contrasena;
+                lineas.Add(nuevaLinea);
+            }
+
+            return lineas;
+        }
+
+        public static List<string[]> BingdingListProductosALista(BindingList<Producto> productos)
+        {
+            List<string[]> lineas = new List<string[]>();
+
+            foreach (Producto producto in productos)
+            {
+                string[] nuevaLinea = new string[5];
+                nuevaLinea[0] = producto.id.ToString();
+                nuevaLinea[1] = producto.nombre;
+                nuevaLinea[2] = producto.precio.ToString();
+                nuevaLinea[3] = producto.descripcion;
+                nuevaLinea[4] = producto.cantidad.ToString();
                 lineas.Add(nuevaLinea);
             }
 

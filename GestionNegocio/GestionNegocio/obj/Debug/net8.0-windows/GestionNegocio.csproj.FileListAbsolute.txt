@@ -19,3 +19,24 @@ C:\Users\nombr\OneDrive\Documentos\code\tarea\Tareasprog2yEdD\GestionNegocio\Ges
 C:\Users\nombr\OneDrive\Documentos\code\tarea\Tareasprog2yEdD\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.MenuPrincipal.resources
 C:\Users\nombr\OneDrive\Documentos\code\tarea\Tareasprog2yEdD\GestionNegocio\GestionNegocio\bin\Debug\net8.0-windows\Resources\data\clientes.csv
 C:\Users\nombr\OneDrive\Documentos\code\tarea\Tareasprog2yEdD\GestionNegocio\GestionNegocio\bin\Debug\net8.0-windows\Resources\data\movimientos.csv
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\bin\Debug\net8.0-windows\Resources\data\clientes.csv
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\bin\Debug\net8.0-windows\Resources\data\movimientos.csv
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\bin\Debug\net8.0-windows\GestionNegocio.exe
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\bin\Debug\net8.0-windows\GestionNegocio.deps.json
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\bin\Debug\net8.0-windows\GestionNegocio.runtimeconfig.json
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\bin\Debug\net8.0-windows\GestionNegocio.dll
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\bin\Debug\net8.0-windows\GestionNegocio.pdb
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.MenuPrincipal.resources
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.PantallaDeBienvenida.resources
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.Properties.Resources.resources
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.csproj.GenerateResource.cache
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.AssemblyInfoInputs.cache
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.AssemblyInfo.cs
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.sourcelink.json
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.dll
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\refint\GestionNegocio.dll
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.pdb
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\GestionNegocio.genruntimeconfig.cache
+C:\Users\Angel\Desktop\Final BOSSSS\Gestion\GestionNegocio\GestionNegocio\obj\Debug\net8.0-windows\ref\GestionNegocio.dll

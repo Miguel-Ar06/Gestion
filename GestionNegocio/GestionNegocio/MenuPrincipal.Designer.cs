@@ -30,12 +30,13 @@ namespace GestionNegocio
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             nombreNegocio = new Label();
             controlPestanas = new TabControl();
             pestanaCobros = new TabPage();
+            botonResetearMovimientos = new Button();
             botonBuscarMovimientos = new Button();
             textoMetodoDePago = new Label();
             movimientoBotonEditar = new Button();
@@ -76,7 +77,11 @@ namespace GestionNegocio
             textoProximamenteFacturas = new Label();
             pestanaAjustes = new TabPage();
             textoProximamenteAjustes = new Label();
-            botonResetearMovimientos = new Button();
+            pagePrueba = new TabPage();
+            XPCedulaInput = new TextBox();
+            label1 = new Label();
+            HeaderClienteXP = new Label();
+            label2 = new Label();
             controlPestanas.SuspendLayout();
             pestanaCobros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tablaDeMovimientos).BeginInit();
@@ -86,6 +91,7 @@ namespace GestionNegocio
             ((System.ComponentModel.ISupportInitialize)tablaClientes).BeginInit();
             pestanaFacturas.SuspendLayout();
             pestanaAjustes.SuspendLayout();
+            pagePrueba.SuspendLayout();
             SuspendLayout();
             // 
             // nombreNegocio
@@ -106,6 +112,7 @@ namespace GestionNegocio
             controlPestanas.Controls.Add(pestanaClientes);
             controlPestanas.Controls.Add(pestanaFacturas);
             controlPestanas.Controls.Add(pestanaAjustes);
+            controlPestanas.Controls.Add(pagePrueba);
             controlPestanas.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             controlPestanas.Location = new Point(12, 89);
             controlPestanas.Name = "controlPestanas";
@@ -139,6 +146,18 @@ namespace GestionNegocio
             pestanaCobros.Size = new Size(1106, 561);
             pestanaCobros.TabIndex = 0;
             pestanaCobros.Text = "Movimiento y cobro";
+            // 
+            // botonResetearMovimientos
+            // 
+            botonResetearMovimientos.BackColor = Color.Transparent;
+            botonResetearMovimientos.Font = new Font("Segoe UI", 12F);
+            botonResetearMovimientos.Location = new Point(350, 424);
+            botonResetearMovimientos.Name = "botonResetearMovimientos";
+            botonResetearMovimientos.Size = new Size(54, 36);
+            botonResetearMovimientos.TabIndex = 19;
+            botonResetearMovimientos.Text = "↻";
+            botonResetearMovimientos.UseVisualStyleBackColor = false;
+            botonResetearMovimientos.Click += botonResetearMovimientos_Click;
             // 
             // botonBuscarMovimientos
             // 
@@ -243,14 +262,14 @@ namespace GestionNegocio
             // 
             tablaDeMovimientos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tablaDeMovimientos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            tablaDeMovimientos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            tablaDeMovimientos.DefaultCellStyle = dataGridViewCellStyle1;
             tablaDeMovimientos.Location = new Point(502, 44);
             tablaDeMovimientos.Name = "tablaDeMovimientos";
             tablaDeMovimientos.RowHeadersWidth = 51;
@@ -358,14 +377,14 @@ namespace GestionNegocio
             tablaInventario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tablaInventario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             tablaInventario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            tablaInventario.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            tablaInventario.DefaultCellStyle = dataGridViewCellStyle2;
             tablaInventario.Location = new Point(20, 175);
             tablaInventario.Name = "tablaInventario";
             tablaInventario.RowHeadersWidth = 51;
@@ -512,14 +531,14 @@ namespace GestionNegocio
             // 
             tablaClientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tablaClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            tablaClientes.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            tablaClientes.DefaultCellStyle = dataGridViewCellStyle3;
             tablaClientes.Location = new Point(503, 55);
             tablaClientes.Name = "tablaClientes";
             tablaClientes.RowHeadersWidth = 51;
@@ -604,17 +623,59 @@ namespace GestionNegocio
             textoProximamenteAjustes.TabIndex = 1;
             textoProximamenteAjustes.Text = "Proximamente";
             // 
-            // botonResetearMovimientos
+            // pagePrueba
             // 
-            botonResetearMovimientos.BackColor = Color.Transparent;
-            botonResetearMovimientos.Font = new Font("Segoe UI", 12F);
-            botonResetearMovimientos.Location = new Point(350, 424);
-            botonResetearMovimientos.Name = "botonResetearMovimientos";
-            botonResetearMovimientos.Size = new Size(54, 36);
-            botonResetearMovimientos.TabIndex = 19;
-            botonResetearMovimientos.Text = "↻";
-            botonResetearMovimientos.UseVisualStyleBackColor = false;
-            botonResetearMovimientos.Click += botonResetearMovimientos_Click;
+            pagePrueba.Controls.Add(label2);
+            pagePrueba.Controls.Add(HeaderClienteXP);
+            pagePrueba.Controls.Add(XPCedulaInput);
+            pagePrueba.Controls.Add(label1);
+            pagePrueba.Location = new Point(4, 37);
+            pagePrueba.Name = "pagePrueba";
+            pagePrueba.Padding = new Padding(3);
+            pagePrueba.Size = new Size(1106, 561);
+            pagePrueba.TabIndex = 5;
+            pagePrueba.Text = "Nivel Clientes";
+            pagePrueba.UseVisualStyleBackColor = true;
+            // 
+            // XPCedulaInput
+            // 
+            XPCedulaInput.BorderStyle = BorderStyle.FixedSingle;
+            XPCedulaInput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            XPCedulaInput.Location = new Point(46, 213);
+            XPCedulaInput.Name = "XPCedulaInput";
+            XPCedulaInput.PlaceholderText = "Cedula del cliente";
+            XPCedulaInput.Size = new Size(308, 34);
+            XPCedulaInput.TabIndex = 19;
+            XPCedulaInput.TextChanged += XPCedulaInput_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(76, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(251, 28);
+            label1.TabIndex = 18;
+            label1.Text = "Ingrese Cedula del Cliente";
+            // 
+            // HeaderClienteXP
+            // 
+            HeaderClienteXP.AutoSize = true;
+            HeaderClienteXP.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            HeaderClienteXP.Location = new Point(98, 290);
+            HeaderClienteXP.Name = "HeaderClienteXP";
+            HeaderClienteXP.Size = new Size(200, 28);
+            HeaderClienteXP.TabIndex = 20;
+            HeaderClienteXP.Text = "Cliente Seleccionado";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(481, 266);
+            label2.Name = "label2";
+            label2.Size = new Size(145, 28);
+            label2.TabIndex = 21;
+            label2.Text = "Proximamente";
             // 
             // MenuPrincipal
             // 
@@ -642,6 +703,8 @@ namespace GestionNegocio
             pestanaFacturas.PerformLayout();
             pestanaAjustes.ResumeLayout(false);
             pestanaAjustes.PerformLayout();
+            pagePrueba.ResumeLayout(false);
+            pagePrueba.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1026,5 +1089,10 @@ namespace GestionNegocio
 
 
         private Button botonResetearMovimientos;
+        private TabPage pagePrueba;
+        private TextBox XPCedulaInput;
+        private Label label1;
+        private Label label2;
+        private Label HeaderClienteXP;
     }
 }

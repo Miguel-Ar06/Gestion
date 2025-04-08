@@ -270,7 +270,7 @@ namespace GestionNegocio
 
                     HerramientasCsv.SobreescribirArchivo(rutaDeArchivoMovimientos, HerramientasCsv.BingdingListMovimientosALista(movimientos));
                     Console.WriteLine("Movimiento con ID " + idSeleccionado + " eliminado");
-                    
+
                     if (_tablaDeMovimientos.RowCount == movimientos.Count)
                     {
                         SetMontoTotal(ContarTotalMovimientos());
@@ -564,6 +564,61 @@ namespace GestionNegocio
             Application.Exit(); // Cierra la aplicación por completo
         }
 
-        
+        private void FiltrarDataGrid(DataGridView dataGridView, string textoBusqueda)
+        {
+            // Guardar la fila actual para restaurarla después
+            int currentRowIndex = dataGridView.CurrentRow != null ? dataGridView.CurrentRow.Index : -1;
+
+            try
+            {
+                // Desactivar temporalmente el enfoque en la fila actual
+                dataGridView.CurrentCell = null;
+
+                // Verificar si el texto de búsqueda está vacío o es igual al marcador " Buscar..."
+                if (string.IsNullOrEmpty(textoBusqueda) || textoBusqueda == " Buscar...")
+                {
+                    // Mostrar todas las filas
+                    foreach (DataGridViewRow row in dataGridView.Rows)
+                    {
+                        row.Visible = true;
+                    }
+                }
+                else
+                {
+                    // Ocultar las filas que no coinciden con el texto de búsqueda
+                    foreach (DataGridViewRow row in dataGridView.Rows)
+                    {
+                        bool palabraCoincide = false;
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            if (cell.Value != null && cell.Value.ToString().ToUpper().Contains(textoBusqueda.ToUpper()))
+                            {
+                                palabraCoincide = true;
+                                break;
+                            }
+                        }
+                        row.Visible = palabraCoincide;
+                    }
+                }
+            }
+            finally
+            {
+                // Restaurar la fila actual solo si existe y está visible
+                if (currentRowIndex >= 0 && currentRowIndex < dataGridView.Rows.Count)
+                {
+                    DataGridViewRow row = dataGridView.Rows[currentRowIndex];
+                    if (row.Visible) // Verificar si la fila está visible
+                    {
+                        dataGridView.CurrentCell = row.Cells[0];
+                    }
+                }
+            }
+        }
+
+        private void XPCedulaInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

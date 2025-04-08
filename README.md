@@ -62,22 +62,28 @@ sin tener que actualizar manualmente, lo unico es que genera la data tal cual la
 demas esta decir que en los archivos `.designer.cs` hay getters y setters para alterar o obtener cosas del formulario xd
 
 ## Cositas que faltan
-dividir el programa en version admin y version para clientes, la del admin seria la que ya esta hecha pero hay que cambiar cositas y agregar cositas
+(!) = esta listo en otra rama, no en main
 
+### programa general
 - [ ] crear un .csv para los productos
-- [ ] implementar pestana de trabajadores y personal (con su csv)
-- [ ] agregar un campo para imagenes de los productos
-- [ ] implementar un combobox en los movimientos para seleccionar el producto a comprar o vender (y restarlo o sumarlo del stock/cantidad)
-- [ ] agregar pestana pedidos con monitoreo (pendiente/enviado/entregado)
-- [ ] agregar pestana promociones donde se pueda alterar el precio de productos bajo ciertas condiciones, aqui tambien se va a llevar seguimiento de los cupones, descuentos y su creacion
-- [ ] implementar sistema de niveles para los clientes, que suban de nivel con mas compras y que ganen cupones
-- [ ] crear todo un modulo de clientes, enlazado directamente a los archivos clientes.csv y movimientos.csv y productos.csv donde el cliente pueda ver la informacion de sus productos adquiridos, nivel, cupones disponibles, todo tiene que manejarse mediante archivos para poder pasar la informacion entre perfiles
-- [ ] implementar un registro/inicio de sesion para clientes, esta sera la vista principal donde inicia el programa
-- [ ] agregar el campo "contrasena" al clientes.csv para poder validar su inicio de sesion o cuando se registren (si se van a registrar pedirles que ingresen dos veces la contrasena como se suele hacer)
-- [ ] el administrador accede a la version de admin mediante un boton y una constrasena x que pongamos nosotros en la pantalla principal
-- [ ] entrega automatica de cupones y recompensas al subir de nivel (literal un pase de batalla)
-- [ ] integrar "metodos de pago", si queremos ponernos exoticos podemos pedir los datos de la tarjeta (numero, fecha, cvv) y validarlo con el algoritmo de luhn (eso se copypastea) para que sea un numero valido
-- [ ] crear un archivo llamado negocio.csv para guardar ahi el nombre del negocio, el color y que se pueda cambiar desde la pestana ajustes en la vista de administrador
+- [ ] agregar un campo para imagenes de los productos (final)
+- [x] (!) implementar un registro/inicio de sesion para clientes, esta sera la vista principal donde inicia el programa
+- [x] (!) agregar el campo "contrasena" al clientes.csv para poder validar su inicio de sesion o cuando se registren (si se van a registrar pedirles que ingresen dos veces la contrasena como se suele hacer)
+- [x] (!) el administrador accede a la version de admin mediante un boton y una constrasena x que pongamos nosotros en la pantalla principal
+- [x] (!) crear un archivo llamado negocio.csv para guardar ahi el nombre del negocio, el color y que se pueda cambiar desde la pestana ajustes en la vista de administrador
+- [ ] integrar "metodos de pago" en ambas vistas, si queremos ponernos exoticos podemos pedir los datos de la tarjeta (numero, fecha, cvv) y validarlo con el algoritmo de luhn (eso se copypastea) para que sea un numero valido
+
+### vista de admin
+- [ ] (prioridad) implementar en los movimientos la compra y venta de varios productos a la vez con una ` List<producto> carrito ` (y restarlo o sumarlo del stock/cantidad), por cada elemento en la lista se ingresa o egresa un nuevo movimiento programaticamente
+- [ ] (prioridad) agregar pestana pedidos con monitoreo (pendiente/enviado/entregado)
+- [ ] (prioridad) agregar pestana promociones en la vista de admin donde se pueda alterar el precio de productos bajo ciertas condiciones, aqui tambien se va a llevar seguimiento de los cupones, descuentos y su creacion
+
+### vista de clientes
+- [ ] (prioridad) crear todo un modulo de clientes, enlazado directamente a los archivos clientes.csv y movimientos.csv y productos.csv donde el cliente pueda ver la informacion de sus productos adquiridos, nivel, cupones disponibles, todo tiene que manejarse mediante archivos para poder pasar la informacion entre perfiles
+- [ ] (prioridad) implementar sistema de niveles para los clientes, que suban de nivel con mas compras y que ganen cupones
+- [ ] (prioridad) implementar un carrito en la vista de clientes con `List<producto> carrito` para que el cliente pueda comprar varias cosas de una
+- [ ] (prioridad) entrega automatica de cupones y recompensas al subir de nivel (literal un pase de batalla)
+- [ ] (prioridad) implementar un historial de compras para el cliente (filtrando los movimientos de `movimientos.csv` que coincidan con su cedula)
 
 ---
 especificaciones del doc

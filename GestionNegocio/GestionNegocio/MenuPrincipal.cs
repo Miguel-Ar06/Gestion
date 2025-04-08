@@ -617,12 +617,41 @@ namespace GestionNegocio
 
         private void XPCedulaInput_TextChanged(object sender, EventArgs e)
         {
-
+            ActualizarLabelCliente();
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BotonProgresoClienteAdministrador_Click(object sender, EventArgs e)
+        {
+            if (!PanelProgresoVistaAdmin.Visible)
+            {
+                PanelProgresoVistaAdmin.Visible = true;
+            } 
+        }
+
+        private void ActualizarLabelCliente()
+        {
+            int idCliente;
+            if (int.TryParse(XPCedulaInput.Text, out idCliente))
+            {
+                var cliente = clientes.FirstOrDefault(j => j.cedula == idCliente);
+                if (cliente != null)
+                {
+                    LabelClienteVersionAdminStaged.Text = cliente.nombre;
+                }
+                else
+                {
+                    LabelClienteVersionAdminStaged.Text = "Jugador no encontrado";
+                }
+            }
+            else
+            {
+                LabelClienteVersionAdminStaged.Text = "ID inválido";
+            }
         }
     }
 }

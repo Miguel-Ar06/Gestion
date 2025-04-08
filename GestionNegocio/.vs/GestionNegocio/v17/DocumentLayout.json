@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A5AF2136-7846-463E-8B83-8F5C2DF584AD}|GestionNegocio\\GestionNegocio.csproj|c:\\users\\nombr\\onedrive\\documentos\\code\\tarea\\gestion\\gestionnegocio\\gestionnegocio\\mainclasses\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5AF2136-7846-463E-8B83-8F5C2DF584AD}|GestionNegocio\\GestionNegocio.csproj|solutionrelative:gestionnegocio\\mainclasses\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A5AF2136-7846-463E-8B83-8F5C2DF584AD}|GestionNegocio\\GestionNegocio.csproj|c:\\users\\nombr\\onedrive\\documentos\\code\\tarea\\gestion\\gestionnegocio\\gestionnegocio\\vistacliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A5AF2136-7846-463E-8B83-8F5C2DF584AD}|GestionNegocio\\GestionNegocio.csproj|solutionrelative:gestionnegocio\\vistacliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -37,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A5AF2136-7846-463E-8B83-8F5C2DF584AD}|GestionNegocio\\GestionNegocio.csproj|c:\\users\\nombr\\onedrive\\documentos\\code\\tarea\\gestion\\gestionnegocio\\gestionnegocio\\menuprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A5AF2136-7846-463E-8B83-8F5C2DF584AD}|GestionNegocio\\GestionNegocio.csproj|solutionrelative:gestionnegocio\\menuprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A5AF2136-7846-463E-8B83-8F5C2DF584AD}|GestionNegocio\\GestionNegocio.csproj|c:\\users\\nombr\\onedrive\\documentos\\code\\tarea\\gestion\\gestionnegocio\\gestionnegocio\\mainclasses\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A5AF2136-7846-463E-8B83-8F5C2DF584AD}|GestionNegocio\\GestionNegocio.csproj|solutionrelative:gestionnegocio\\mainclasses\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A5AF2136-7846-463E-8B83-8F5C2DF584AD}|GestionNegocio\\GestionNegocio.csproj|c:\\users\\nombr\\onedrive\\documentos\\code\\tarea\\gestion\\gestionnegocio\\gestionnegocio\\mainclasses\\herramientascsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "vistaCliente.cs [Design]",
               "DocumentMoniker": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\vistaCliente.cs",
               "RelativeDocumentMoniker": "GestionNegocio\\vistaCliente.cs",
@@ -118,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "vistaCliente.Designer.cs",
               "DocumentMoniker": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\vistaCliente.Designer.cs",
               "RelativeDocumentMoniker": "GestionNegocio\\vistaCliente.Designer.cs",
@@ -131,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "vistaCliente.cs",
               "DocumentMoniker": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\vistaCliente.cs",
               "RelativeDocumentMoniker": "GestionNegocio\\vistaCliente.cs",
@@ -139,12 +139,11 @@
               "RelativeToolTip": "GestionNegocio\\vistaCliente.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAIwEEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T03:02:52.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T03:02:52.357Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PaletaDeColor.cs",
               "DocumentMoniker": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\UIclasses\\PaletaDeColor.cs",
               "RelativeDocumentMoniker": "GestionNegocio\\UIclasses\\PaletaDeColor.cs",
@@ -152,25 +151,24 @@
               "RelativeToolTip": "GestionNegocio\\UIclasses\\PaletaDeColor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T01:00:03.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-08T01:00:03.997Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "Movimiento.cs",
               "DocumentMoniker": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\MainClasses\\Movimiento.cs",
               "RelativeDocumentMoniker": "GestionNegocio\\MainClasses\\Movimiento.cs",
               "ToolTip": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\MainClasses\\Movimiento.cs",
               "RelativeToolTip": "GestionNegocio\\MainClasses\\Movimiento.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAACDAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-07T18:36:51.816Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "MenuPrincipal.Designer.cs",
               "DocumentMoniker": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\MenuPrincipal.Designer.cs",
               "RelativeDocumentMoniker": "GestionNegocio\\MenuPrincipal.Designer.cs",
@@ -178,12 +176,11 @@
               "RelativeToolTip": "GestionNegocio\\MenuPrincipal.Designer.cs",
               "ViewState": "AgIAABoEAAAAAAAAAAAUwDAEAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T18:30:03.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T18:30:03.603Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\MainClasses\\Cliente.cs",
               "RelativeDocumentMoniker": "GestionNegocio\\MainClasses\\Cliente.cs",
@@ -191,12 +188,11 @@
               "RelativeToolTip": "GestionNegocio\\MainClasses\\Cliente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T16:33:26.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T16:33:26.766Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "MenuPrincipal.cs",
               "DocumentMoniker": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\MenuPrincipal.cs",
               "RelativeDocumentMoniker": "GestionNegocio\\MenuPrincipal.cs",
@@ -209,15 +205,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "MenuPrincipal.cs [Design]",
               "DocumentMoniker": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\MenuPrincipal.cs",
               "RelativeDocumentMoniker": "GestionNegocio\\MenuPrincipal.cs",
               "ToolTip": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\MenuPrincipal.cs [Design]",
               "RelativeToolTip": "GestionNegocio\\MenuPrincipal.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T14:28:18.921Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-07T14:28:18.921Z"
             },
             {
               "$type": "Document",
@@ -229,8 +224,7 @@
               "RelativeToolTip": "GestionNegocio\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T13:55:12.712Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T13:55:12.712Z"
             },
             {
               "$type": "Document",
@@ -242,8 +236,7 @@
               "RelativeToolTip": "GestionNegocio\\MainClasses\\Negocio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T04:54:39.634Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T04:54:39.634Z"
             },
             {
               "$type": "Document",
@@ -255,8 +248,7 @@
               "RelativeToolTip": "GestionNegocio\\MainClasses\\HerramientasCsv.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAADgvwsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T04:52:35.48Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T04:52:35.48Z"
             },
             {
               "$type": "Document",
@@ -268,12 +260,11 @@
               "RelativeToolTip": "GestionNegocio\\Resources\\data\\negocioConfig.csv",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2025-04-07T03:12:32.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T03:12:32.849Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PantallaDeBienvenida.cs",
               "DocumentMoniker": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\PantallaDeBienvenida.cs",
               "RelativeDocumentMoniker": "GestionNegocio\\PantallaDeBienvenida.cs",
@@ -294,8 +285,7 @@
               "RelativeToolTip": "GestionNegocio\\Resources\\data\\clientes.csv",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2025-04-07T02:54:42.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T02:54:42.223Z"
             },
             {
               "$type": "Document",
@@ -306,8 +296,7 @@
               "ToolTip": "C:\\Users\\nombr\\OneDrive\\Documentos\\code\\tarea\\Gestion\\GestionNegocio\\GestionNegocio\\PantallaDeBienvenida.cs [Design]",
               "RelativeToolTip": "GestionNegocio\\PantallaDeBienvenida.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T02:46:43.46Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-07T02:46:43.46Z"
             },
             {
               "$type": "Document",
@@ -319,8 +308,7 @@
               "RelativeToolTip": "GestionNegocio\\PantallaDeBienvenida.Designer.cs",
               "ViewState": "AgIAAH4BAAAAAAAAAAAkwJMBAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T02:46:13.848Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T02:46:13.848Z"
             }
           ]
         }

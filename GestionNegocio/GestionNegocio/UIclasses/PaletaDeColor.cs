@@ -17,6 +17,7 @@ namespace GestionNegocio.UIclasses
 
         public PaletaDeColor(String nombre ,Color primario, Color secundario, Color textos)
         {
+            this.nombre = nombre;
             colorPrincipal = primario;
             colorSecundario = secundario;
             colorTextos = textos;

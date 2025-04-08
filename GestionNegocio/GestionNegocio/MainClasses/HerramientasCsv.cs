@@ -226,7 +226,7 @@ namespace GestionNegocio.MainClasses
             SobreescribirArchivo(rutaArchivo, lineas);
         }
 
-        public static void AgregarConfiguracionNegocio(string rutaArchivo, Negocio negocio)
+        public static void ActualizarConfiguracionNegocio(string rutaArchivo, Negocio negocio)
         {
             List<string[]> lineas = LeerTodasLasLineas(rutaArchivo);
             string[] nuevaLinea = new string[3];
@@ -235,7 +235,15 @@ namespace GestionNegocio.MainClasses
             nuevaLinea[1] = negocio.coloresPrograma.nombre;
             nuevaLinea[2] = negocio.credencial;
 
-            lineas.Add(nuevaLinea);
+            if (lineas.Count == 1)
+            {
+                lineas.Add(nuevaLinea);
+            }
+            else
+            {
+                lineas[1] = nuevaLinea;
+            }
+
             SobreescribirArchivo(rutaArchivo, lineas);
         }
 

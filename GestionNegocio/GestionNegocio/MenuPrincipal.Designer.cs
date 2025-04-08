@@ -36,6 +36,7 @@ namespace GestionNegocio
             nombreNegocio = new Label();
             controlPestanas = new TabControl();
             pestanaCobros = new TabPage();
+            botonResetearMovimientos = new Button();
             botonBuscarMovimientos = new Button();
             textoMetodoDePago = new Label();
             movimientoBotonEditar = new Button();
@@ -75,8 +76,20 @@ namespace GestionNegocio
             pestanaFacturas = new TabPage();
             textoProximamenteFacturas = new Label();
             pestanaAjustes = new TabPage();
-            textoProximamenteAjustes = new Label();
-            botonResetearMovimientos = new Button();
+            labelAjustesSeguridad = new Label();
+            panelAjustesSeguridad = new Panel();
+            textBoxAjustesCredencialNueva = new TextBox();
+            textBoxAjustesCredencialAntigua = new TextBox();
+            labelAjustesCredencialAntigua = new Label();
+            labelAjustesCredencialNueva = new Label();
+            labelAjustesInterfaz = new Label();
+            botonGuardarCambiosAjustes = new Button();
+            panelAjustesInterfaz = new Panel();
+            textBoxAjustesNombre = new TextBox();
+            comboBoxAjustesTema = new ComboBox();
+            ajustesLabelNombre = new Label();
+            labelAjustesTema = new Label();
+            labelPanelAdministrativo = new Label();
             controlPestanas.SuspendLayout();
             pestanaCobros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tablaDeMovimientos).BeginInit();
@@ -86,6 +99,8 @@ namespace GestionNegocio
             ((System.ComponentModel.ISupportInitialize)tablaClientes).BeginInit();
             pestanaFacturas.SuspendLayout();
             pestanaAjustes.SuspendLayout();
+            panelAjustesSeguridad.SuspendLayout();
+            panelAjustesInterfaz.SuspendLayout();
             SuspendLayout();
             // 
             // nombreNegocio
@@ -139,6 +154,18 @@ namespace GestionNegocio
             pestanaCobros.Size = new Size(1106, 561);
             pestanaCobros.TabIndex = 0;
             pestanaCobros.Text = "Movimiento y cobro";
+            // 
+            // botonResetearMovimientos
+            // 
+            botonResetearMovimientos.BackColor = Color.Transparent;
+            botonResetearMovimientos.Font = new Font("Segoe UI", 12F);
+            botonResetearMovimientos.Location = new Point(350, 424);
+            botonResetearMovimientos.Name = "botonResetearMovimientos";
+            botonResetearMovimientos.Size = new Size(54, 36);
+            botonResetearMovimientos.TabIndex = 19;
+            botonResetearMovimientos.Text = "↻";
+            botonResetearMovimientos.UseVisualStyleBackColor = false;
+            botonResetearMovimientos.Click += botonResetearMovimientos_Click;
             // 
             // botonBuscarMovimientos
             // 
@@ -587,7 +614,11 @@ namespace GestionNegocio
             // 
             // pestanaAjustes
             // 
-            pestanaAjustes.Controls.Add(textoProximamenteAjustes);
+            pestanaAjustes.Controls.Add(labelAjustesSeguridad);
+            pestanaAjustes.Controls.Add(panelAjustesSeguridad);
+            pestanaAjustes.Controls.Add(labelAjustesInterfaz);
+            pestanaAjustes.Controls.Add(botonGuardarCambiosAjustes);
+            pestanaAjustes.Controls.Add(panelAjustesInterfaz);
             pestanaAjustes.Location = new Point(4, 37);
             pestanaAjustes.Name = "pestanaAjustes";
             pestanaAjustes.Size = new Size(1106, 561);
@@ -595,32 +626,151 @@ namespace GestionNegocio
             pestanaAjustes.Text = "Ajustes";
             pestanaAjustes.UseVisualStyleBackColor = true;
             // 
-            // textoProximamenteAjustes
+            // labelAjustesSeguridad
             // 
-            textoProximamenteAjustes.AutoSize = true;
-            textoProximamenteAjustes.Location = new Point(476, 253);
-            textoProximamenteAjustes.Name = "textoProximamenteAjustes";
-            textoProximamenteAjustes.Size = new Size(145, 28);
-            textoProximamenteAjustes.TabIndex = 1;
-            textoProximamenteAjustes.Text = "Proximamente";
+            labelAjustesSeguridad.AutoSize = true;
+            labelAjustesSeguridad.BackColor = Color.Transparent;
+            labelAjustesSeguridad.ForeColor = Color.Gray;
+            labelAjustesSeguridad.Location = new Point(43, 220);
+            labelAjustesSeguridad.Name = "labelAjustesSeguridad";
+            labelAjustesSeguridad.Size = new Size(104, 28);
+            labelAjustesSeguridad.TabIndex = 6;
+            labelAjustesSeguridad.Text = "Seguridad";
             // 
-            // botonResetearMovimientos
+            // panelAjustesSeguridad
             // 
-            botonResetearMovimientos.BackColor = Color.Transparent;
-            botonResetearMovimientos.Font = new Font("Segoe UI", 12F);
-            botonResetearMovimientos.Location = new Point(350, 424);
-            botonResetearMovimientos.Name = "botonResetearMovimientos";
-            botonResetearMovimientos.Size = new Size(54, 36);
-            botonResetearMovimientos.TabIndex = 19;
-            botonResetearMovimientos.Text = "↻";
-            botonResetearMovimientos.UseVisualStyleBackColor = false;
-            botonResetearMovimientos.Click += botonResetearMovimientos_Click;
+            panelAjustesSeguridad.BackColor = Color.Gainsboro;
+            panelAjustesSeguridad.Controls.Add(textBoxAjustesCredencialNueva);
+            panelAjustesSeguridad.Controls.Add(textBoxAjustesCredencialAntigua);
+            panelAjustesSeguridad.Controls.Add(labelAjustesCredencialAntigua);
+            panelAjustesSeguridad.Controls.Add(labelAjustesCredencialNueva);
+            panelAjustesSeguridad.Location = new Point(43, 251);
+            panelAjustesSeguridad.Name = "panelAjustesSeguridad";
+            panelAjustesSeguridad.Size = new Size(515, 141);
+            panelAjustesSeguridad.TabIndex = 7;
+            // 
+            // textBoxAjustesCredencialNueva
+            // 
+            textBoxAjustesCredencialNueva.Location = new Point(240, 75);
+            textBoxAjustesCredencialNueva.Name = "textBoxAjustesCredencialNueva";
+            textBoxAjustesCredencialNueva.Size = new Size(242, 34);
+            textBoxAjustesCredencialNueva.TabIndex = 4;
+            // 
+            // textBoxAjustesCredencialAntigua
+            // 
+            textBoxAjustesCredencialAntigua.Location = new Point(240, 23);
+            textBoxAjustesCredencialAntigua.Name = "textBoxAjustesCredencialAntigua";
+            textBoxAjustesCredencialAntigua.Size = new Size(242, 34);
+            textBoxAjustesCredencialAntigua.TabIndex = 2;
+            // 
+            // labelAjustesCredencialAntigua
+            // 
+            labelAjustesCredencialAntigua.AutoSize = true;
+            labelAjustesCredencialAntigua.BackColor = Color.Gainsboro;
+            labelAjustesCredencialAntigua.Location = new Point(14, 23);
+            labelAjustesCredencialAntigua.Name = "labelAjustesCredencialAntigua";
+            labelAjustesCredencialAntigua.Size = new Size(192, 28);
+            labelAjustesCredencialAntigua.TabIndex = 1;
+            labelAjustesCredencialAntigua.Text = "| Credencial antigua";
+            // 
+            // labelAjustesCredencialNueva
+            // 
+            labelAjustesCredencialNueva.AutoSize = true;
+            labelAjustesCredencialNueva.BackColor = Color.Gainsboro;
+            labelAjustesCredencialNueva.Location = new Point(14, 78);
+            labelAjustesCredencialNueva.Name = "labelAjustesCredencialNueva";
+            labelAjustesCredencialNueva.Size = new Size(179, 28);
+            labelAjustesCredencialNueva.TabIndex = 3;
+            labelAjustesCredencialNueva.Text = "| Credencial nueva";
+            // 
+            // labelAjustesInterfaz
+            // 
+            labelAjustesInterfaz.AutoSize = true;
+            labelAjustesInterfaz.BackColor = Color.Transparent;
+            labelAjustesInterfaz.ForeColor = Color.Gray;
+            labelAjustesInterfaz.Location = new Point(43, 31);
+            labelAjustesInterfaz.Name = "labelAjustesInterfaz";
+            labelAjustesInterfaz.Size = new Size(81, 28);
+            labelAjustesInterfaz.TabIndex = 5;
+            labelAjustesInterfaz.Text = "Interfaz";
+            // 
+            // botonGuardarCambiosAjustes
+            // 
+            botonGuardarCambiosAjustes.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            botonGuardarCambiosAjustes.Font = new Font("Segoe UI Semibold", 9F);
+            botonGuardarCambiosAjustes.Location = new Point(922, 502);
+            botonGuardarCambiosAjustes.Name = "botonGuardarCambiosAjustes";
+            botonGuardarCambiosAjustes.Size = new Size(161, 41);
+            botonGuardarCambiosAjustes.TabIndex = 0;
+            botonGuardarCambiosAjustes.Text = "Guardar Cambios";
+            botonGuardarCambiosAjustes.UseVisualStyleBackColor = true;
+            botonGuardarCambiosAjustes.Click += botonGuardarCambiosAjustes_Click;
+            // 
+            // panelAjustesInterfaz
+            // 
+            panelAjustesInterfaz.BackColor = Color.Gainsboro;
+            panelAjustesInterfaz.Controls.Add(textBoxAjustesNombre);
+            panelAjustesInterfaz.Controls.Add(comboBoxAjustesTema);
+            panelAjustesInterfaz.Controls.Add(ajustesLabelNombre);
+            panelAjustesInterfaz.Controls.Add(labelAjustesTema);
+            panelAjustesInterfaz.Location = new Point(43, 62);
+            panelAjustesInterfaz.Name = "panelAjustesInterfaz";
+            panelAjustesInterfaz.Size = new Size(515, 141);
+            panelAjustesInterfaz.TabIndex = 5;
+            // 
+            // textBoxAjustesNombre
+            // 
+            textBoxAjustesNombre.Location = new Point(240, 23);
+            textBoxAjustesNombre.Name = "textBoxAjustesNombre";
+            textBoxAjustesNombre.Size = new Size(242, 34);
+            textBoxAjustesNombre.TabIndex = 2;
+            // 
+            // comboBoxAjustesTema
+            // 
+            comboBoxAjustesTema.FormattingEnabled = true;
+            comboBoxAjustesTema.Items.AddRange(new object[] { "Azul", "Verde", "Amarillo", "Naranja", "Rojo", "Violeta", "Negro", "Gris" });
+            comboBoxAjustesTema.Location = new Point(240, 75);
+            comboBoxAjustesTema.Name = "comboBoxAjustesTema";
+            comboBoxAjustesTema.Size = new Size(242, 36);
+            comboBoxAjustesTema.TabIndex = 4;
+            // 
+            // ajustesLabelNombre
+            // 
+            ajustesLabelNombre.AutoSize = true;
+            ajustesLabelNombre.BackColor = Color.Gainsboro;
+            ajustesLabelNombre.Location = new Point(14, 23);
+            ajustesLabelNombre.Name = "ajustesLabelNombre";
+            ajustesLabelNombre.Size = new Size(212, 28);
+            ajustesLabelNombre.TabIndex = 1;
+            ajustesLabelNombre.Text = "| Nombre del negocio";
+            // 
+            // labelAjustesTema
+            // 
+            labelAjustesTema.AutoSize = true;
+            labelAjustesTema.BackColor = Color.Gainsboro;
+            labelAjustesTema.Location = new Point(14, 78);
+            labelAjustesTema.Name = "labelAjustesTema";
+            labelAjustesTema.Size = new Size(152, 28);
+            labelAjustesTema.TabIndex = 3;
+            labelAjustesTema.Text = "| Tema de color";
+            // 
+            // labelPanelAdministrativo
+            // 
+            labelPanelAdministrativo.AutoSize = true;
+            labelPanelAdministrativo.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPanelAdministrativo.ForeColor = SystemColors.ControlDarkDark;
+            labelPanelAdministrativo.Location = new Point(894, 39);
+            labelPanelAdministrativo.Name = "labelPanelAdministrativo";
+            labelPanelAdministrativo.Size = new Size(228, 31);
+            labelPanelAdministrativo.TabIndex = 2;
+            labelPanelAdministrativo.Text = "Panel Administrativo";
             // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1138, 703);
+            Controls.Add(labelPanelAdministrativo);
             Controls.Add(controlPestanas);
             Controls.Add(nombreNegocio);
             ForeColor = SystemColors.ActiveCaptionText;
@@ -642,6 +792,10 @@ namespace GestionNegocio
             pestanaFacturas.PerformLayout();
             pestanaAjustes.ResumeLayout(false);
             pestanaAjustes.PerformLayout();
+            panelAjustesSeguridad.ResumeLayout(false);
+            panelAjustesSeguridad.PerformLayout();
+            panelAjustesInterfaz.ResumeLayout(false);
+            panelAjustesInterfaz.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -657,6 +811,8 @@ namespace GestionNegocio
         private TabPage pestanaInventario;
         private TabPage pestanaAjustes;
         private TabPage pestanaFacturas;
+        private Label labelPanelAdministrativo;
+
 
         // setters
         public void SetColorNombreNegocio(Color colorFondo, Color colorTexto)
@@ -691,7 +847,7 @@ namespace GestionNegocio
         private Button botonEliminarMovimiento;
         private Label textoMetodoDePago;
         private Button botonBuscarMovimientos;
-
+        private Button botonResetearMovimientos;
 
         // setters 
         public void LimpiarMonto()
@@ -1007,24 +1163,64 @@ namespace GestionNegocio
         // componentes
         private Label textoProximamenteFacturas;
 
-        // getters
-
-        // setters
-
-        #endregion
-
+#endregion
+        
         #region Pestana ajustes
 
         // componentes
-        private Label textoProximamenteAjustes;
+        private Button botonGuardarCambiosAjustes;
+        private Label ajustesLabelNombre;
+        private ComboBox comboBoxAjustesTema;
+        private Label labelAjustesTema;
+        private TextBox textBoxAjustesNombre;
+        private Panel panelAjustesInterfaz;
+        private Label labelAjustesInterfaz;
+        private Label labelAjustesSeguridad;
+        private Panel panelAjustesSeguridad;
+        private TextBox textBoxAjustesCredencialNueva;
+        private TextBox textBoxAjustesCredencialAntigua;
+        private Label labelAjustesCredencialAntigua;
+        private Label labelAjustesCredencialNueva;
 
         //getters
+        public string GetNuevoNombre()
+        {
+            return textBoxAjustesNombre.Text.Trim();
+        }
+        public string GetTemaSeleccionado()
+        {
+            return comboBoxAjustesTema.Text.Trim();
+        }
+        public string GetCredencialAntigua()
+        {
+            return textBoxAjustesCredencialAntigua.Text.Trim();
+        }
+        public string GetCredencialNueva()
+        {
+            return textBoxAjustesCredencialNueva.Text.Trim();
+        }
 
         // setters
+        public void LimpiarNombreAjustes()
+        {
+            textBoxAjustesNombre.Clear();
+        }
+        public void LimpiarTemaAjustes()
+        {
+            comboBoxAjustesTema.SelectedIndex = -1;
+        }
+        public void LimpiarCredencialAntigua()
+        {
+            textBoxAjustesCredencialAntigua.Clear();
+        }
+        public void LimpiarCredencialNueva()
+        {
+            textBoxAjustesCredencialNueva.Clear();
+        }
 
         #endregion
 
 
-        private Button botonResetearMovimientos;
+
     }
 }

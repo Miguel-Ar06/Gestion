@@ -48,6 +48,7 @@ namespace GestionNegocio.MainClasses
         {
             return nombre;
         }
+        
         /*
         public int GetFundacion()
         {

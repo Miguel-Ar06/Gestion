@@ -27,6 +27,7 @@ namespace GestionNegocio
         private static string rutaDeAplicacion = AppDomain.CurrentDomain.BaseDirectory;
         private static string rutaDeArchivoClientes = Path.Combine(rutaDeAplicacion, "Resources", "data", "clientes.csv");
         private static string rutaDeArchivoMovimientos = Path.Combine(rutaDeAplicacion, "Resources", "data", "movimientos.csv");
+        private static string rutaArchivoNegocio = Path.Combine(rutaDeAplicacion, "Resources", "data", "negocioConfig.csv");
 
         // datagrids y manipulacion
         private static BindingList<Movimiento> movimientos = HerramientasCsv.ListaStringsAMovimientos(HerramientasCsv.LeerTodasLasLineas(rutaDeArchivoMovimientos));
@@ -270,7 +271,7 @@ namespace GestionNegocio
 
                     HerramientasCsv.SobreescribirArchivo(rutaDeArchivoMovimientos, HerramientasCsv.BingdingListMovimientosALista(movimientos));
                     Console.WriteLine("Movimiento con ID " + idSeleccionado + " eliminado");
-                    
+
                     if (_tablaDeMovimientos.RowCount == movimientos.Count)
                     {
                         SetMontoTotal(ContarTotalMovimientos());
@@ -560,11 +561,46 @@ namespace GestionNegocio
 
         #endregion
 
+        #region Pestana ajustes
+
+        private void botonGuardarCambiosAjustes_Click(object sender, EventArgs e)
+        {
+            Negocio negocioActual = HerramientasCsv.GetNegocioDesdeCsv(rutaArchivoNegocio, PantallaDeBienvenida.temas);
+            Negocio negocioActualizado = new Negocio(negocioActual.nombre, negocioActual.coloresPrograma, negocioActual.credencial);
+
+            if (!String.IsNullOrEmpty(GetNuevoNombre()))
+            {
+                negocioActualizado.nombre = GetNuevoNombre();
+            }
+
+            if (!String.IsNullOrEmpty(GetTemaSeleccionado()))
+            {
+                negocioActualizado.coloresPrograma = PantallaDeBienvenida.temas[GetTemaSeleccionado()];
+                //MessageBox.Show(negocioActualizado.GetNombrePaleta());
+            }
+
+            if (!String.IsNullOrEmpty(GetCredencialNueva()))
+            {
+                if (negocioActual.credencial == GetCredencialAntigua())
+                {
+                    negocioActualizado.credencial = GetCredencialNueva();
+                }
+                else
+                {
+                    MessageBox.Show("Por seguridad, valide su credencial de acceso antigua");
+                }
+            }
+
+            MessageBox.Show("Su aplicacion se reiniciara para efectuar los cambios");
+            HerramientasCsv.ActualizarConfiguracionNegocio(rutaArchivoNegocio, negocioActualizado);
+            Application.Restart();
+        }
+
+        #endregion 
+
         private void FormMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit(); // Cierra la aplicación por completo
         }
-
-        
     }
 }

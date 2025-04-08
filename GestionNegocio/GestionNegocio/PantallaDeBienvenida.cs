@@ -45,6 +45,8 @@ namespace GestionNegocio
 
         private void PantallaDeBienvenida_Load(object sender, EventArgs e)
         {
+            SetColorTextoBienvenida(negocio.coloresPrograma.colorPrincipal);
+
             if (negocioExiste == false)
             {
                 SetModoIngresoAAdmin(true, !negocioExiste);
@@ -97,7 +99,7 @@ namespace GestionNegocio
                 {
                     clientes.Add(clienteActual);
                     HerramientasCsv.AgregarCliente(rutaDeArchivoClientes, clienteActual);
-                    Console.WriteLine("Cliente agregado");
+                    Console.WriteLine("Cliente registrado exitosamente");
                     LimpiarCedula();
                     LimpiarNombre();
                     LimpiarCorreo();
@@ -168,7 +170,7 @@ namespace GestionNegocio
                     negocio = new Negocio(GetNombreNegocio(), coloresPrograma, GetCredencial());
                     Console.WriteLine("Ventana de menu abierta");
                     MenuPrincipal menuPrincipal = new MenuPrincipal(negocio);
-                    HerramientasCsv.AgregarConfiguracionNegocio(rutaArchivoNegocio, negocio);
+                    HerramientasCsv.ActualizarConfiguracionNegocio(rutaArchivoNegocio, negocio);
                     menuPrincipal.Show();
 
                     this.Hide();

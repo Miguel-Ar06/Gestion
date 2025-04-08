@@ -138,6 +138,9 @@ namespace GestionNegocio.MainClasses
             string correo;
             int edad;
             string residencia;
+            int nivel;
+            int xp;
+
 
             BindingList<Cliente> clientes = new BindingList<Cliente>();
 
@@ -150,8 +153,10 @@ namespace GestionNegocio.MainClasses
                     correo = linea[2];
                     edad = int.Parse(linea[3]);
                     residencia = linea[4];
+                    nivel = int.Parse(linea[5]);
+                    xp  = int.Parse(linea[6]);
 
-                    Cliente cliente = new Cliente(cedula, nombre, correo, edad, residencia);
+                    Cliente cliente = new Cliente(cedula, nombre, correo, edad, residencia, nivel, xp);
                     clientes.Add(cliente);
                 }
             }
@@ -179,13 +184,15 @@ namespace GestionNegocio.MainClasses
         public static void AgregarCliente(string rutaArchivo, Cliente cliente)
         {
             List<string[]> lineas = LeerTodasLasLineas(rutaArchivo);
-            string[] nuevaLinea = new string[5];
+            string[] nuevaLinea = new string[7];
 
             nuevaLinea[0] = cliente.cedula.ToString();
             nuevaLinea[1] = cliente.nombre;
             nuevaLinea[2] = cliente.correo;
             nuevaLinea[3] = cliente.edad.ToString();
             nuevaLinea[4] = cliente.residencia;
+            nuevaLinea[5] = cliente.GetNivel().ToString();
+            nuevaLinea[6] = cliente.GetXp().ToString();
 
             lineas.Add(nuevaLinea);
             SobreescribirArchivo(rutaArchivo, lineas);

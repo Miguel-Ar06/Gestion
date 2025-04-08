@@ -449,7 +449,7 @@ namespace GestionNegocio
             clienteEdad = GetEdadCliente();
             clienteResidencia = GetResidenciaCliente();
 
-            Cliente clienteActual = new Cliente(clienteCedula, clienteNombre, clienteCorreo, clienteEdad, clienteResidencia);
+            Cliente clienteActual = new Cliente(clienteCedula, clienteNombre, clienteCorreo, clienteEdad, clienteResidencia, 1 ,0);
 
             if (clienteCedula != -1 && clienteNombre != "" && clienteCorreo != "" && clienteEdad != -1 && clienteResidencia != "" && ValidarCorreo(clienteCorreo))
             {
@@ -511,6 +511,7 @@ namespace GestionNegocio
         {
             clienteCedula = GetCedulaCliente();
 
+
             if (cedulaClienteExiste(clienteCedula))
             {
                 Cliente clienteAEliminar = clientes.First(c => c.cedula == clienteCedula);
@@ -551,7 +552,7 @@ namespace GestionNegocio
                 return;
             }
 
-            Cliente clienteEditado = new Cliente(GetCedulaCliente(), GetNombreCliente(), GetCorreoCliente(), GetEdadCliente(), GetResidenciaCliente());
+            Cliente clienteEditado = new Cliente(GetCedulaCliente(), GetNombreCliente(), GetCorreoCliente(), GetEdadCliente(), GetResidenciaCliente(),GetNivelHistorial() ,  GetXPClientesHistorial() );
 
             clientes[clientes.IndexOf(clientes.First(c => c.cedula == clienteCedula))] = clienteEditado;
             HerramientasCsv.SobreescribirArchivo(rutaDeArchivoClientes, HerramientasCsv.BingdingListClientesALista(clientes));
@@ -620,18 +621,46 @@ namespace GestionNegocio
             ActualizarLabelCliente();
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BotonProgresoClienteAdministrador_Click(object sender, EventArgs e)
         {
+            string clienteNombre = LabelClienteVersionAdminStaged.Text;
+
             if (!PanelProgresoVistaAdmin.Visible)
             {
                 PanelProgresoVistaAdmin.Visible = true;
-            } 
+            }
+
+            if (clienteNombre == "Cliente no encontrado" || clienteNombre == "ID inválido")
+            {
+                MessageBox.Show("El cliente no existe");
+                return;
+            }
+
+            int idCliente = int.Parse(XPCedulaInput.Text);
+            var cliente = clientes.FirstOrDefault(j => j.cedula == idCliente);
+
+            if (cliente != null)
+            {
+                int xpActual = cliente.GetXp();
+                int nivelActual = cliente.GetNivel();
+                int xpParaSiguienteNivel = cliente.CalcularXPParaNivel(nivelActual);
+                int xpRestante = cliente.GetXpRestante();
+
+                progresoClientesVersionAdmin.Maximum = xpParaSiguienteNivel;
+                progresoClientesVersionAdmin.Value = xpActual <= xpParaSiguienteNivel ? xpActual : xpParaSiguienteNivel;
+
+                NombreXpLabel.Text = "Nombre: " + cliente.nombre;
+                NivelXPLabel.Text = "Nivel: " + cliente.GetNivel().ToString();
+                XPLabel.Text = "XP: " + cliente.GetXp().ToString();
+                XpRestanteLabel.Text = "XP restante para subir de nivel: " + xpRestante.ToString();
+            }
+            else
+            {
+                MessageBox.Show("El cliente no existe");
+            }
         }
+
 
         private void ActualizarLabelCliente()
         {
@@ -645,7 +674,7 @@ namespace GestionNegocio
                 }
                 else
                 {
-                    LabelClienteVersionAdminStaged.Text = "Jugador no encontrado";
+                    LabelClienteVersionAdminStaged.Text = "Cliente no encontrado";
                 }
             }
             else

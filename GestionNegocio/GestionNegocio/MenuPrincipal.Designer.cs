@@ -80,12 +80,13 @@ namespace GestionNegocio
             pagePrueba = new TabPage();
             PanelProgresoVistaAdmin = new Panel();
             panel1 = new Panel();
-            label6 = new Label();
-            label7 = new Label();
-            label5 = new Label();
-            label4 = new Label();
+            label3 = new Label();
+            XpRestanteLabel = new Label();
+            XPLabel = new Label();
+            NivelXPLabel = new Label();
+            NombreXpLabel = new Label();
             ProgresBarHeaderAdmin = new Label();
-            progressBar1 = new ProgressBar();
+            progresoClientesVersionAdmin = new ProgressBar();
             label2 = new Label();
             pictureBox1 = new PictureBox();
             BotonProgresoClienteAdministrador = new Button();
@@ -659,7 +660,7 @@ namespace GestionNegocio
             // 
             PanelProgresoVistaAdmin.Controls.Add(panel1);
             PanelProgresoVistaAdmin.Controls.Add(ProgresBarHeaderAdmin);
-            PanelProgresoVistaAdmin.Controls.Add(progressBar1);
+            PanelProgresoVistaAdmin.Controls.Add(progresoClientesVersionAdmin);
             PanelProgresoVistaAdmin.Location = new Point(451, 34);
             PanelProgresoVistaAdmin.Name = "PanelProgresoVistaAdmin";
             PanelProgresoVistaAdmin.Size = new Size(634, 491);
@@ -669,68 +670,79 @@ namespace GestionNegocio
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(225, 225, 225);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(XpRestanteLabel);
+            panel1.Controls.Add(XPLabel);
+            panel1.Controls.Add(NivelXPLabel);
+            panel1.Controls.Add(NombreXpLabel);
             panel1.Location = new Point(98, 179);
             panel1.Name = "panel1";
             panel1.Size = new Size(470, 284);
             panel1.TabIndex = 22;
             // 
-            // label6
+            // label3
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(46, 165);
-            label6.Name = "label6";
-            label6.Size = new Size(273, 28);
-            label6.TabIndex = 3;
-            label6.Text = "XP restante para subir de lv :";
-            label6.Click += label6_Click;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Symbol", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(4, 68, 68, 68);
+            label3.Location = new Point(96, 231);
+            label3.Name = "label3";
+            label3.Size = new Size(272, 25);
+            label3.TabIndex = 23;
+            label3.Text = "Nota: cada compra sube 1 xp";
             // 
-            // label7
+            // XpRestanteLabel
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(46, 123);
-            label7.Name = "label7";
-            label7.Size = new Size(41, 28);
-            label7.TabIndex = 2;
-            label7.Text = "XP:";
+            XpRestanteLabel.AutoSize = true;
+            XpRestanteLabel.Location = new Point(46, 165);
+            XpRestanteLabel.Name = "XpRestanteLabel";
+            XpRestanteLabel.Size = new Size(273, 28);
+            XpRestanteLabel.TabIndex = 3;
+            XpRestanteLabel.Text = "XP restante para subir de lv :";
             // 
-            // label5
+            // XPLabel
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(46, 80);
-            label5.Name = "label5";
-            label5.Size = new Size(69, 28);
-            label5.TabIndex = 1;
-            label5.Text = "Nivel :";
+            XPLabel.AutoSize = true;
+            XPLabel.Location = new Point(46, 123);
+            XPLabel.Name = "XPLabel";
+            XPLabel.Size = new Size(41, 28);
+            XPLabel.TabIndex = 2;
+            XPLabel.Text = "XP:";
             // 
-            // label4
+            // NivelXPLabel
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(46, 38);
-            label4.Name = "label4";
-            label4.Size = new Size(92, 28);
-            label4.TabIndex = 0;
-            label4.Text = "Nombre:";
+            NivelXPLabel.AutoSize = true;
+            NivelXPLabel.Location = new Point(46, 80);
+            NivelXPLabel.Name = "NivelXPLabel";
+            NivelXPLabel.Size = new Size(69, 28);
+            NivelXPLabel.TabIndex = 1;
+            NivelXPLabel.Text = "Nivel :";
+            // 
+            // NombreXpLabel
+            // 
+            NombreXpLabel.AutoSize = true;
+            NombreXpLabel.Location = new Point(46, 38);
+            NombreXpLabel.Name = "NombreXpLabel";
+            NombreXpLabel.Size = new Size(92, 28);
+            NombreXpLabel.TabIndex = 0;
+            NombreXpLabel.Text = "Nombre:";
             // 
             // ProgresBarHeaderAdmin
             // 
             ProgresBarHeaderAdmin.AutoSize = true;
             ProgresBarHeaderAdmin.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ProgresBarHeaderAdmin.Location = new Point(245, 47);
+            ProgresBarHeaderAdmin.Location = new Point(266, 50);
             ProgresBarHeaderAdmin.Name = "ProgresBarHeaderAdmin";
             ProgresBarHeaderAdmin.Size = new Size(63, 28);
             ProgresBarHeaderAdmin.TabIndex = 21;
             ProgresBarHeaderAdmin.Text = "Nivel:";
             // 
-            // progressBar1
+            // progresoClientesVersionAdmin
             // 
-            progressBar1.Location = new Point(99, 90);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(467, 51);
-            progressBar1.TabIndex = 0;
+            progresoClientesVersionAdmin.Location = new Point(99, 90);
+            progresoClientesVersionAdmin.Name = "progresoClientesVersionAdmin";
+            progresoClientesVersionAdmin.Size = new Size(467, 51);
+            progresoClientesVersionAdmin.TabIndex = 0;
             // 
             // label2
             // 
@@ -765,7 +777,7 @@ namespace GestionNegocio
             // 
             LabelClienteVersionAdminStaged.AutoSize = true;
             LabelClienteVersionAdminStaged.Font = new Font("Segoe UI Symbol", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            LabelClienteVersionAdminStaged.Location = new Point(119, 341);
+            LabelClienteVersionAdminStaged.Location = new Point(98, 339);
             LabelClienteVersionAdminStaged.Name = "LabelClienteVersionAdminStaged";
             LabelClienteVersionAdminStaged.Size = new Size(84, 25);
             LabelClienteVersionAdminStaged.TabIndex = 22;
@@ -775,7 +787,7 @@ namespace GestionNegocio
             // 
             HeaderClienteXP.AutoSize = true;
             HeaderClienteXP.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            HeaderClienteXP.Location = new Point(98, 283);
+            HeaderClienteXP.Location = new Point(110, 283);
             HeaderClienteXP.Name = "HeaderClienteXP";
             HeaderClienteXP.Size = new Size(200, 28);
             HeaderClienteXP.TabIndex = 20;
@@ -962,6 +974,18 @@ namespace GestionNegocio
                 MessageBox.Show("Introduzca una cedula valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
+        }
+
+
+
+        public int GetXPClientesHistorial()
+        {
+            return 0;
+        }
+
+        public int GetNivelHistorial()
+        {
+            return 1;
         }
         public string GetMetodoDePago()
         {
@@ -1229,11 +1253,12 @@ namespace GestionNegocio
         private Panel PanelProgresoVistaAdmin;
         private PictureBox pictureBox1;
         private Label ProgresBarHeaderAdmin;
-        private ProgressBar progressBar1;
+        private ProgressBar progresoClientesVersionAdmin;
         private Panel panel1;
-        private Label label5;
-        private Label label4;
-        private Label label6;
-        private Label label7;
+        private Label NivelXPLabel;
+        private Label NombreXpLabel;
+        private Label XpRestanteLabel;
+        private Label XPLabel;
+        private Label label3;
     }
 }

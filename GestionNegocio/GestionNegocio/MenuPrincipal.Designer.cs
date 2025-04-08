@@ -30,9 +30,9 @@ namespace GestionNegocio
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
             nombreNegocio = new Label();
             controlPestanas = new TabControl();
             pestanaCobros = new TabPage();
@@ -78,16 +78,21 @@ namespace GestionNegocio
             pestanaAjustes = new TabPage();
             textoProximamenteAjustes = new Label();
             pagePrueba = new TabPage();
+            PanelProgresoVistaAdmin = new Panel();
+            panel1 = new Panel();
+            label5 = new Label();
+            label4 = new Label();
+            ProgresBarHeaderAdmin = new Label();
+            progressBar1 = new ProgressBar();
             label2 = new Label();
+            pictureBox1 = new PictureBox();
+            BotonProgresoClienteAdministrador = new Button();
+            label3 = new Label();
             HeaderClienteXP = new Label();
             XPCedulaInput = new TextBox();
             label1 = new Label();
-            label3 = new Label();
-            BotonProgresoClienteAdministrador = new Button();
-            pictureBox1 = new PictureBox();
-            PanelProgresoVistaAdmin = new Panel();
-            progressBar1 = new ProgressBar();
-            ProgresBarHeaderAdmin = new Label();
+            label6 = new Label();
+            label7 = new Label();
             controlPestanas.SuspendLayout();
             pestanaCobros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tablaDeMovimientos).BeginInit();
@@ -98,8 +103,9 @@ namespace GestionNegocio
             pestanaFacturas.SuspendLayout();
             pestanaAjustes.SuspendLayout();
             pagePrueba.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelProgresoVistaAdmin.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // nombreNegocio
@@ -270,14 +276,14 @@ namespace GestionNegocio
             // 
             tablaDeMovimientos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tablaDeMovimientos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            tablaDeMovimientos.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = SystemColors.Window;
+            dataGridViewCellStyle16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle16.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle16.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.False;
+            tablaDeMovimientos.DefaultCellStyle = dataGridViewCellStyle16;
             tablaDeMovimientos.Location = new Point(502, 44);
             tablaDeMovimientos.Name = "tablaDeMovimientos";
             tablaDeMovimientos.RowHeadersWidth = 51;
@@ -385,14 +391,14 @@ namespace GestionNegocio
             tablaInventario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tablaInventario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             tablaInventario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            tablaInventario.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = SystemColors.Window;
+            dataGridViewCellStyle17.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle17.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle17.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.False;
+            tablaInventario.DefaultCellStyle = dataGridViewCellStyle17;
             tablaInventario.Location = new Point(20, 175);
             tablaInventario.Name = "tablaInventario";
             tablaInventario.RowHeadersWidth = 51;
@@ -539,14 +545,14 @@ namespace GestionNegocio
             // 
             tablaClientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tablaClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            tablaClientes.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = SystemColors.Window;
+            dataGridViewCellStyle18.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle18.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle18.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.False;
+            tablaClientes.DefaultCellStyle = dataGridViewCellStyle18;
             tablaClientes.Location = new Point(503, 55);
             tablaClientes.Name = "tablaClientes";
             tablaClientes.RowHeadersWidth = 51;
@@ -649,6 +655,65 @@ namespace GestionNegocio
             pagePrueba.Text = "Nivel Clientes";
             pagePrueba.UseVisualStyleBackColor = true;
             // 
+            // PanelProgresoVistaAdmin
+            // 
+            PanelProgresoVistaAdmin.Controls.Add(panel1);
+            PanelProgresoVistaAdmin.Controls.Add(ProgresBarHeaderAdmin);
+            PanelProgresoVistaAdmin.Controls.Add(progressBar1);
+            PanelProgresoVistaAdmin.Location = new Point(451, 34);
+            PanelProgresoVistaAdmin.Name = "PanelProgresoVistaAdmin";
+            PanelProgresoVistaAdmin.Size = new Size(634, 491);
+            PanelProgresoVistaAdmin.TabIndex = 25;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(225, 225, 225);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label4);
+            panel1.Location = new Point(98, 179);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(470, 284);
+            panel1.TabIndex = 22;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(46, 80);
+            label5.Name = "label5";
+            label5.Size = new Size(69, 28);
+            label5.TabIndex = 1;
+            label5.Text = "Nivel :";
+            label5.Click += this.label5_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(46, 38);
+            label4.Name = "label4";
+            label4.Size = new Size(92, 28);
+            label4.TabIndex = 0;
+            label4.Text = "Nombre:";
+            label4.Click += this.label4_Click;
+            // 
+            // ProgresBarHeaderAdmin
+            // 
+            ProgresBarHeaderAdmin.AutoSize = true;
+            ProgresBarHeaderAdmin.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ProgresBarHeaderAdmin.Location = new Point(245, 47);
+            ProgresBarHeaderAdmin.Name = "ProgresBarHeaderAdmin";
+            ProgresBarHeaderAdmin.Size = new Size(63, 28);
+            ProgresBarHeaderAdmin.TabIndex = 21;
+            ProgresBarHeaderAdmin.Text = "Nivel:";
+            // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(99, 90);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(467, 51);
+            progressBar1.TabIndex = 0;
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -657,6 +722,35 @@ namespace GestionNegocio
             label2.Size = new Size(388, 28);
             label2.TabIndex = 21;
             label2.Text = "No ha seleccionado a ningun cliente aún.";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.descarga;
+            pictureBox1.Location = new Point(550, 99);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(469, 281);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 24;
+            pictureBox1.TabStop = false;
+            // 
+            // BotonProgresoClienteAdministrador
+            // 
+            BotonProgresoClienteAdministrador.Location = new Point(55, 414);
+            BotonProgresoClienteAdministrador.Name = "BotonProgresoClienteAdministrador";
+            BotonProgresoClienteAdministrador.Size = new Size(308, 83);
+            BotonProgresoClienteAdministrador.TabIndex = 23;
+            BotonProgresoClienteAdministrador.Text = "Ver informacion";
+            BotonProgresoClienteAdministrador.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Symbol", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Location = new Point(119, 341);
+            label3.Name = "label3";
+            label3.Size = new Size(84, 25);
+            label3.TabIndex = 22;
+            label3.Text = "Nombre";
             // 
             // HeaderClienteXP
             // 
@@ -689,60 +783,25 @@ namespace GestionNegocio
             label1.TabIndex = 18;
             label1.Text = "Ingrese Cedula del Cliente";
             // 
-            // label3
+            // label6
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Symbol", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label3.Location = new Point(119, 341);
-            label3.Name = "label3";
-            label3.Size = new Size(84, 25);
-            label3.TabIndex = 22;
-            label3.Text = "Nombre";
+            label6.AutoSize = true;
+            label6.Location = new Point(46, 165);
+            label6.Name = "label6";
+            label6.Size = new Size(273, 28);
+            label6.TabIndex = 3;
+            label6.Text = "XP restante para subir de lv :";
+            label6.Click += label6_Click;
             // 
-            // BotonProgresoClienteAdministrador
+            // label7
             // 
-            BotonProgresoClienteAdministrador.Location = new Point(55, 414);
-            BotonProgresoClienteAdministrador.Name = "BotonProgresoClienteAdministrador";
-            BotonProgresoClienteAdministrador.Size = new Size(308, 83);
-            BotonProgresoClienteAdministrador.TabIndex = 23;
-            BotonProgresoClienteAdministrador.Text = "Ver informacion";
-            BotonProgresoClienteAdministrador.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.descarga;
-            pictureBox1.Location = new Point(550, 99);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(469, 281);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 24;
-            pictureBox1.TabStop = false;
-            // 
-            // PanelProgresoVistaAdmin
-            // 
-            PanelProgresoVistaAdmin.Controls.Add(ProgresBarHeaderAdmin);
-            PanelProgresoVistaAdmin.Controls.Add(progressBar1);
-            PanelProgresoVistaAdmin.Location = new Point(451, 34);
-            PanelProgresoVistaAdmin.Name = "PanelProgresoVistaAdmin";
-            PanelProgresoVistaAdmin.Size = new Size(634, 491);
-            PanelProgresoVistaAdmin.TabIndex = 25;
-            // 
-            // progressBar1
-            // 
-            progressBar1.Location = new Point(99, 90);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(467, 51);
-            progressBar1.TabIndex = 0;
-            // 
-            // ProgresBarHeaderAdmin
-            // 
-            ProgresBarHeaderAdmin.AutoSize = true;
-            ProgresBarHeaderAdmin.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ProgresBarHeaderAdmin.Location = new Point(247, 45);
-            ProgresBarHeaderAdmin.Name = "ProgresBarHeaderAdmin";
-            ProgresBarHeaderAdmin.Size = new Size(63, 28);
-            ProgresBarHeaderAdmin.TabIndex = 21;
-            ProgresBarHeaderAdmin.Text = "Nivel:";
+            label7.AutoSize = true;
+            label7.Location = new Point(46, 123);
+            label7.Name = "label7";
+            label7.Size = new Size(41, 28);
+            label7.TabIndex = 2;
+            label7.Text = "XP:";
+            label7.Click += this.label7_Click;
             // 
             // MenuPrincipal
             // 
@@ -772,9 +831,11 @@ namespace GestionNegocio
             pestanaAjustes.PerformLayout();
             pagePrueba.ResumeLayout(false);
             pagePrueba.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PanelProgresoVistaAdmin.ResumeLayout(false);
             PanelProgresoVistaAdmin.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1170,5 +1231,10 @@ namespace GestionNegocio
         private PictureBox pictureBox1;
         private Label ProgresBarHeaderAdmin;
         private ProgressBar progressBar1;
+        private Panel panel1;
+        private Label label5;
+        private Label label4;
+        private Label label6;
+        private Label label7;
     }
 }

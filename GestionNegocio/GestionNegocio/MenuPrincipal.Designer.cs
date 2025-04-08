@@ -58,7 +58,6 @@ namespace GestionNegocio
             tablaInventario = new DataGridView();
             botonAgregarProducto = new Button();
             descripcionProducto = new TextBox();
-            marcaProducto = new TextBox();
             precioProducto = new TextBox();
             cantidadProducto = new TextBox();
             nombreProducto = new TextBox();
@@ -90,6 +89,7 @@ namespace GestionNegocio
             ajustesLabelNombre = new Label();
             labelAjustesTema = new Label();
             labelPanelAdministrativo = new Label();
+            buscarIdProducto = new TextBox();
             controlPestanas.SuspendLayout();
             pestanaCobros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tablaDeMovimientos).BeginInit();
@@ -107,9 +107,10 @@ namespace GestionNegocio
             // 
             nombreNegocio.AutoSize = true;
             nombreNegocio.Font = new Font("Segoe UI Semibold", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            nombreNegocio.Location = new Point(12, 21);
+            nombreNegocio.Location = new Point(15, 26);
+            nombreNegocio.Margin = new Padding(4, 0, 4, 0);
             nombreNegocio.Name = "nombreNegocio";
-            nombreNegocio.Size = new Size(408, 54);
+            nombreNegocio.Size = new Size(495, 65);
             nombreNegocio.TabIndex = 0;
             nombreNegocio.Text = "Nombre Del Negocio";
             // 
@@ -122,11 +123,12 @@ namespace GestionNegocio
             controlPestanas.Controls.Add(pestanaFacturas);
             controlPestanas.Controls.Add(pestanaAjustes);
             controlPestanas.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            controlPestanas.Location = new Point(12, 89);
+            controlPestanas.Location = new Point(15, 111);
+            controlPestanas.Margin = new Padding(4, 4, 4, 4);
             controlPestanas.Name = "controlPestanas";
             controlPestanas.RightToLeft = RightToLeft.No;
             controlPestanas.SelectedIndex = 0;
-            controlPestanas.Size = new Size(1114, 602);
+            controlPestanas.Size = new Size(1392, 752);
             controlPestanas.TabIndex = 1;
             // 
             // pestanaCobros
@@ -148,10 +150,11 @@ namespace GestionNegocio
             pestanaCobros.Controls.Add(movimientoBotonIngreso);
             pestanaCobros.Controls.Add(movimientoMonto);
             pestanaCobros.Controls.Add(movimientoDescripcion);
-            pestanaCobros.Location = new Point(4, 37);
+            pestanaCobros.Location = new Point(4, 41);
+            pestanaCobros.Margin = new Padding(4, 4, 4, 4);
             pestanaCobros.Name = "pestanaCobros";
-            pestanaCobros.Padding = new Padding(3);
-            pestanaCobros.Size = new Size(1106, 561);
+            pestanaCobros.Padding = new Padding(4, 4, 4, 4);
+            pestanaCobros.Size = new Size(1384, 707);
             pestanaCobros.TabIndex = 0;
             pestanaCobros.Text = "Movimiento y cobro";
             // 
@@ -159,9 +162,10 @@ namespace GestionNegocio
             // 
             botonResetearMovimientos.BackColor = Color.Transparent;
             botonResetearMovimientos.Font = new Font("Segoe UI", 12F);
-            botonResetearMovimientos.Location = new Point(350, 424);
+            botonResetearMovimientos.Location = new Point(438, 530);
+            botonResetearMovimientos.Margin = new Padding(4, 4, 4, 4);
             botonResetearMovimientos.Name = "botonResetearMovimientos";
-            botonResetearMovimientos.Size = new Size(54, 36);
+            botonResetearMovimientos.Size = new Size(68, 45);
             botonResetearMovimientos.TabIndex = 19;
             botonResetearMovimientos.Text = "↻";
             botonResetearMovimientos.UseVisualStyleBackColor = false;
@@ -171,9 +175,10 @@ namespace GestionNegocio
             // 
             botonBuscarMovimientos.BackColor = Color.Transparent;
             botonBuscarMovimientos.Font = new Font("Segoe UI", 12F);
-            botonBuscarMovimientos.Location = new Point(207, 481);
+            botonBuscarMovimientos.Location = new Point(259, 601);
+            botonBuscarMovimientos.Margin = new Padding(4, 4, 4, 4);
             botonBuscarMovimientos.Name = "botonBuscarMovimientos";
-            botonBuscarMovimientos.Size = new Size(197, 36);
+            botonBuscarMovimientos.Size = new Size(246, 45);
             botonBuscarMovimientos.TabIndex = 18;
             botonBuscarMovimientos.Text = "Buscar por cedula";
             botonBuscarMovimientos.UseVisualStyleBackColor = false;
@@ -183,9 +188,10 @@ namespace GestionNegocio
             // 
             textoMetodoDePago.AutoSize = true;
             textoMetodoDePago.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textoMetodoDePago.Location = new Point(53, 240);
+            textoMetodoDePago.Location = new Point(66, 300);
+            textoMetodoDePago.Margin = new Padding(4, 0, 4, 0);
             textoMetodoDePago.Name = "textoMetodoDePago";
-            textoMetodoDePago.Size = new Size(165, 28);
+            textoMetodoDePago.Size = new Size(196, 32);
             textoMetodoDePago.TabIndex = 17;
             textoMetodoDePago.Text = "Metodo de pago";
             // 
@@ -193,9 +199,10 @@ namespace GestionNegocio
             // 
             movimientoBotonEditar.BackColor = Color.SkyBlue;
             movimientoBotonEditar.Font = new Font("Segoe UI", 12F);
-            movimientoBotonEditar.Location = new Point(53, 481);
+            movimientoBotonEditar.Location = new Point(66, 601);
+            movimientoBotonEditar.Margin = new Padding(4, 4, 4, 4);
             movimientoBotonEditar.Name = "movimientoBotonEditar";
-            movimientoBotonEditar.Size = new Size(137, 36);
+            movimientoBotonEditar.Size = new Size(171, 45);
             movimientoBotonEditar.TabIndex = 16;
             movimientoBotonEditar.Text = "Editar";
             movimientoBotonEditar.UseVisualStyleBackColor = false;
@@ -204,9 +211,10 @@ namespace GestionNegocio
             // movimientoFecha
             // 
             movimientoFecha.CalendarForeColor = SystemColors.ActiveCaptionText;
-            movimientoFecha.Location = new Point(53, 336);
+            movimientoFecha.Location = new Point(66, 420);
+            movimientoFecha.Margin = new Padding(4, 4, 4, 4);
             movimientoFecha.Name = "movimientoFecha";
-            movimientoFecha.Size = new Size(351, 34);
+            movimientoFecha.Size = new Size(438, 39);
             movimientoFecha.TabIndex = 15;
             // 
             // movimientoMetodoDePago
@@ -216,19 +224,21 @@ namespace GestionNegocio
             movimientoMetodoDePago.ForeColor = SystemColors.WindowFrame;
             movimientoMetodoDePago.FormattingEnabled = true;
             movimientoMetodoDePago.Items.AddRange(new object[] { "Efectivo", "Tarjeta de credito", "Tarjeta de Debito", "En linea" });
-            movimientoMetodoDePago.Location = new Point(53, 280);
+            movimientoMetodoDePago.Location = new Point(66, 350);
+            movimientoMetodoDePago.Margin = new Padding(4, 4, 4, 4);
             movimientoMetodoDePago.Name = "movimientoMetodoDePago";
-            movimientoMetodoDePago.Size = new Size(351, 36);
+            movimientoMetodoDePago.Size = new Size(438, 40);
             movimientoMetodoDePago.TabIndex = 14;
             // 
             // movimientoCedula
             // 
             movimientoCedula.BorderStyle = BorderStyle.FixedSingle;
             movimientoCedula.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            movimientoCedula.Location = new Point(53, 191);
+            movimientoCedula.Location = new Point(66, 239);
+            movimientoCedula.Margin = new Padding(4, 4, 4, 4);
             movimientoCedula.Name = "movimientoCedula";
             movimientoCedula.PlaceholderText = "Cedula del cliente";
-            movimientoCedula.Size = new Size(351, 34);
+            movimientoCedula.Size = new Size(438, 39);
             movimientoCedula.TabIndex = 13;
             // 
             // botonEliminarMovimiento
@@ -236,9 +246,10 @@ namespace GestionNegocio
             botonEliminarMovimiento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             botonEliminarMovimiento.BackColor = Color.LightCoral;
             botonEliminarMovimiento.Font = new Font("Segoe UI", 12F);
-            botonEliminarMovimiento.Location = new Point(918, 488);
+            botonEliminarMovimiento.Location = new Point(1148, 610);
+            botonEliminarMovimiento.Margin = new Padding(4, 4, 4, 4);
             botonEliminarMovimiento.Name = "botonEliminarMovimiento";
-            botonEliminarMovimiento.Size = new Size(137, 36);
+            botonEliminarMovimiento.Size = new Size(171, 45);
             botonEliminarMovimiento.TabIndex = 12;
             botonEliminarMovimiento.Text = "Eliminar";
             botonEliminarMovimiento.UseVisualStyleBackColor = false;
@@ -249,9 +260,10 @@ namespace GestionNegocio
             montoTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             montoTotal.AutoSize = true;
             montoTotal.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
-            montoTotal.Location = new Point(590, 482);
+            montoTotal.Location = new Point(738, 602);
+            montoTotal.Margin = new Padding(4, 0, 4, 0);
             montoTotal.Name = "montoTotal";
-            montoTotal.Size = new Size(93, 41);
+            montoTotal.Size = new Size(109, 48);
             montoTotal.TabIndex = 11;
             montoTotal.Text = "0.00$";
             // 
@@ -260,9 +272,10 @@ namespace GestionNegocio
             textoTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textoTotal.AutoSize = true;
             textoTotal.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textoTotal.Location = new Point(502, 481);
+            textoTotal.Location = new Point(628, 601);
+            textoTotal.Margin = new Padding(4, 0, 4, 0);
             textoTotal.Name = "textoTotal";
-            textoTotal.Size = new Size(92, 41);
+            textoTotal.Size = new Size(109, 48);
             textoTotal.TabIndex = 10;
             textoTotal.Text = "Total:";
             // 
@@ -281,7 +294,7 @@ namespace GestionNegocio
             tablaDeMovimientos.Location = new Point(502, 44);
             tablaDeMovimientos.Name = "tablaDeMovimientos";
             tablaDeMovimientos.RowHeadersWidth = 51;
-            tablaDeMovimientos.Size = new Size(553, 414);
+            tablaDeMovimientos.Size = new Size(691, 518);
             tablaDeMovimientos.TabIndex = 9;
             tablaDeMovimientos.CellFormatting += tablaDeMovimientos_CellFormatting;
             // 
@@ -289,9 +302,10 @@ namespace GestionNegocio
             // 
             movimientoTextoRegistrar.AutoSize = true;
             movimientoTextoRegistrar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            movimientoTextoRegistrar.Location = new Point(53, 383);
+            movimientoTextoRegistrar.Location = new Point(66, 479);
+            movimientoTextoRegistrar.Margin = new Padding(4, 0, 4, 0);
             movimientoTextoRegistrar.Name = "movimientoTextoRegistrar";
-            movimientoTextoRegistrar.Size = new Size(148, 28);
+            movimientoTextoRegistrar.Size = new Size(178, 32);
             movimientoTextoRegistrar.TabIndex = 8;
             movimientoTextoRegistrar.Text = "Registrar como";
             // 
@@ -299,9 +313,10 @@ namespace GestionNegocio
             // 
             movimientoBotonEgreso.BackColor = Color.PaleVioletRed;
             movimientoBotonEgreso.Font = new Font("Segoe UI", 12F);
-            movimientoBotonEgreso.Location = new Point(207, 424);
+            movimientoBotonEgreso.Location = new Point(259, 530);
+            movimientoBotonEgreso.Margin = new Padding(4, 4, 4, 4);
             movimientoBotonEgreso.Name = "movimientoBotonEgreso";
-            movimientoBotonEgreso.Size = new Size(137, 36);
+            movimientoBotonEgreso.Size = new Size(171, 45);
             movimientoBotonEgreso.TabIndex = 7;
             movimientoBotonEgreso.Text = "Egreso";
             movimientoBotonEgreso.UseVisualStyleBackColor = false;
@@ -311,9 +326,10 @@ namespace GestionNegocio
             // 
             movimientoBotonIngreso.BackColor = Color.LightGreen;
             movimientoBotonIngreso.Font = new Font("Segoe UI", 12F);
-            movimientoBotonIngreso.Location = new Point(53, 424);
+            movimientoBotonIngreso.Location = new Point(66, 530);
+            movimientoBotonIngreso.Margin = new Padding(4, 4, 4, 4);
             movimientoBotonIngreso.Name = "movimientoBotonIngreso";
-            movimientoBotonIngreso.Size = new Size(137, 36);
+            movimientoBotonIngreso.Size = new Size(171, 45);
             movimientoBotonIngreso.TabIndex = 6;
             movimientoBotonIngreso.Text = "Ingreso";
             movimientoBotonIngreso.UseVisualStyleBackColor = false;
@@ -323,58 +339,64 @@ namespace GestionNegocio
             // 
             movimientoMonto.BorderStyle = BorderStyle.FixedSingle;
             movimientoMonto.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            movimientoMonto.Location = new Point(53, 140);
+            movimientoMonto.Location = new Point(66, 175);
+            movimientoMonto.Margin = new Padding(4, 4, 4, 4);
             movimientoMonto.Name = "movimientoMonto";
             movimientoMonto.PlaceholderText = "Monto: $000,000.00";
-            movimientoMonto.Size = new Size(351, 34);
+            movimientoMonto.Size = new Size(438, 39);
             movimientoMonto.TabIndex = 5;
             // 
             // movimientoDescripcion
             // 
             movimientoDescripcion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            movimientoDescripcion.Location = new Point(53, 44);
+            movimientoDescripcion.Location = new Point(66, 55);
+            movimientoDescripcion.Margin = new Padding(4, 4, 4, 4);
             movimientoDescripcion.Multiline = true;
             movimientoDescripcion.Name = "movimientoDescripcion";
             movimientoDescripcion.PlaceholderText = "Descripcion";
-            movimientoDescripcion.Size = new Size(351, 80);
+            movimientoDescripcion.Size = new Size(438, 99);
             movimientoDescripcion.TabIndex = 3;
             // 
             // pestanaInventario
             // 
+            pestanaInventario.Controls.Add(buscarIdProducto);
             pestanaInventario.Controls.Add(botonBuscarProducto);
             pestanaInventario.Controls.Add(botonEliminarProducto);
             pestanaInventario.Controls.Add(tablaInventario);
             pestanaInventario.Controls.Add(botonAgregarProducto);
             pestanaInventario.Controls.Add(descripcionProducto);
-            pestanaInventario.Controls.Add(marcaProducto);
             pestanaInventario.Controls.Add(precioProducto);
             pestanaInventario.Controls.Add(cantidadProducto);
             pestanaInventario.Controls.Add(nombreProducto);
-            pestanaInventario.Location = new Point(4, 37);
+            pestanaInventario.Location = new Point(4, 41);
+            pestanaInventario.Margin = new Padding(4, 4, 4, 4);
             pestanaInventario.Name = "pestanaInventario";
-            pestanaInventario.Padding = new Padding(3);
-            pestanaInventario.Size = new Size(1106, 561);
+            pestanaInventario.Padding = new Padding(4, 4, 4, 4);
+            pestanaInventario.Size = new Size(1384, 707);
             pestanaInventario.TabIndex = 1;
             pestanaInventario.Text = "Inventario";
             pestanaInventario.UseVisualStyleBackColor = true;
             // 
             // botonBuscarProducto
             // 
-            botonBuscarProducto.Location = new Point(899, 23);
+            botonBuscarProducto.Location = new Point(1124, 29);
+            botonBuscarProducto.Margin = new Padding(4, 4, 4, 4);
             botonBuscarProducto.Name = "botonBuscarProducto";
-            botonBuscarProducto.Size = new Size(162, 83);
+            botonBuscarProducto.Size = new Size(202, 104);
             botonBuscarProducto.TabIndex = 8;
             botonBuscarProducto.Text = "Buscar";
             botonBuscarProducto.UseVisualStyleBackColor = true;
+            botonBuscarProducto.Click += botonBuscarProducto_Click;
             // 
             // botonEliminarProducto
             // 
             botonEliminarProducto.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             botonEliminarProducto.BackColor = Color.LightCoral;
             botonEliminarProducto.Font = new Font("Segoe UI", 12F);
-            botonEliminarProducto.Location = new Point(946, 501);
+            botonEliminarProducto.Location = new Point(1182, 626);
+            botonEliminarProducto.Margin = new Padding(4, 4, 4, 4);
             botonEliminarProducto.Name = "botonEliminarProducto";
-            botonEliminarProducto.Size = new Size(137, 36);
+            botonEliminarProducto.Size = new Size(171, 45);
             botonEliminarProducto.TabIndex = 7;
             botonEliminarProducto.Text = "Eliminar";
             botonEliminarProducto.UseVisualStyleBackColor = false;
@@ -396,14 +418,15 @@ namespace GestionNegocio
             tablaInventario.Location = new Point(20, 175);
             tablaInventario.Name = "tablaInventario";
             tablaInventario.RowHeadersWidth = 51;
-            tablaInventario.Size = new Size(1063, 290);
+            tablaInventario.Size = new Size(1329, 362);
             tablaInventario.TabIndex = 6;
             // 
             // botonAgregarProducto
             // 
-            botonAgregarProducto.Location = new Point(721, 23);
+            botonAgregarProducto.Location = new Point(901, 29);
+            botonAgregarProducto.Margin = new Padding(4, 4, 4, 4);
             botonAgregarProducto.Name = "botonAgregarProducto";
-            botonAgregarProducto.Size = new Size(162, 83);
+            botonAgregarProducto.Size = new Size(202, 104);
             botonAgregarProducto.TabIndex = 5;
             botonAgregarProducto.Text = "Agregar";
             botonAgregarProducto.UseVisualStyleBackColor = true;
@@ -413,51 +436,45 @@ namespace GestionNegocio
             // 
             descripcionProducto.BorderStyle = BorderStyle.FixedSingle;
             descripcionProducto.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            descripcionProducto.Location = new Point(20, 74);
+            descripcionProducto.Location = new Point(25, 92);
+            descripcionProducto.Margin = new Padding(4, 4, 4, 4);
             descripcionProducto.Multiline = true;
             descripcionProducto.Name = "descripcionProducto";
             descripcionProducto.PlaceholderText = "Descripcion";
-            descripcionProducto.Size = new Size(480, 71);
+            descripcionProducto.Size = new Size(600, 88);
             descripcionProducto.TabIndex = 4;
-            // 
-            // marcaProducto
-            // 
-            marcaProducto.BorderStyle = BorderStyle.FixedSingle;
-            marcaProducto.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            marcaProducto.Location = new Point(516, 23);
-            marcaProducto.Name = "marcaProducto";
-            marcaProducto.PlaceholderText = "Marca";
-            marcaProducto.Size = new Size(189, 34);
-            marcaProducto.TabIndex = 3;
             // 
             // precioProducto
             // 
             precioProducto.BorderStyle = BorderStyle.FixedSingle;
             precioProducto.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            precioProducto.Location = new Point(379, 23);
+            precioProducto.Location = new Point(474, 29);
+            precioProducto.Margin = new Padding(4, 4, 4, 4);
             precioProducto.Name = "precioProducto";
             precioProducto.PlaceholderText = "*Precio ($)";
-            precioProducto.Size = new Size(121, 34);
+            precioProducto.Size = new Size(151, 39);
             precioProducto.TabIndex = 2;
             // 
             // cantidadProducto
             // 
             cantidadProducto.BorderStyle = BorderStyle.FixedSingle;
             cantidadProducto.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cantidadProducto.Location = new Point(250, 23);
+            cantidadProducto.Location = new Point(312, 29);
+            cantidadProducto.Margin = new Padding(4, 4, 4, 4);
             cantidadProducto.Name = "cantidadProducto";
             cantidadProducto.PlaceholderText = "*Cantidad";
-            cantidadProducto.Size = new Size(112, 34);
+            cantidadProducto.Size = new Size(140, 39);
             cantidadProducto.TabIndex = 1;
             // 
             // nombreProducto
             // 
             nombreProducto.BorderStyle = BorderStyle.FixedSingle;
             nombreProducto.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nombreProducto.Location = new Point(20, 23);
+            nombreProducto.Location = new Point(25, 29);
+            nombreProducto.Margin = new Padding(4, 4, 4, 4);
             nombreProducto.Name = "nombreProducto";
             nombreProducto.PlaceholderText = "*Nombre del producto";
-            nombreProducto.Size = new Size(207, 34);
+            nombreProducto.Size = new Size(258, 39);
             nombreProducto.TabIndex = 0;
             // 
             // pestanaClientes
@@ -472,10 +489,11 @@ namespace GestionNegocio
             pestanaClientes.Controls.Add(residenciaCliente);
             pestanaClientes.Controls.Add(edadCliente);
             pestanaClientes.Controls.Add(nombreCliente);
-            pestanaClientes.Location = new Point(4, 37);
+            pestanaClientes.Location = new Point(4, 41);
+            pestanaClientes.Margin = new Padding(4, 4, 4, 4);
             pestanaClientes.Name = "pestanaClientes";
-            pestanaClientes.Padding = new Padding(3);
-            pestanaClientes.Size = new Size(1106, 561);
+            pestanaClientes.Padding = new Padding(4, 4, 4, 4);
+            pestanaClientes.Size = new Size(1384, 707);
             pestanaClientes.TabIndex = 4;
             pestanaClientes.Text = "Clientes";
             pestanaClientes.UseVisualStyleBackColor = true;
@@ -484,9 +502,10 @@ namespace GestionNegocio
             // 
             botonEditarCliente.BackColor = Color.SkyBlue;
             botonEditarCliente.Font = new Font("Segoe UI", 12F);
-            botonEditarCliente.Location = new Point(26, 462);
+            botonEditarCliente.Location = new Point(32, 578);
+            botonEditarCliente.Margin = new Padding(4, 4, 4, 4);
             botonEditarCliente.Name = "botonEditarCliente";
-            botonEditarCliente.Size = new Size(137, 36);
+            botonEditarCliente.Size = new Size(171, 45);
             botonEditarCliente.TabIndex = 19;
             botonEditarCliente.Text = "Editar";
             botonEditarCliente.UseVisualStyleBackColor = false;
@@ -496,17 +515,19 @@ namespace GestionNegocio
             // 
             cedulaCliente.BorderStyle = BorderStyle.FixedSingle;
             cedulaCliente.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cedulaCliente.Location = new Point(26, 105);
+            cedulaCliente.Location = new Point(32, 131);
+            cedulaCliente.Margin = new Padding(4, 4, 4, 4);
             cedulaCliente.Name = "cedulaCliente";
             cedulaCliente.PlaceholderText = "Cedula";
-            cedulaCliente.Size = new Size(244, 34);
+            cedulaCliente.Size = new Size(304, 39);
             cedulaCliente.TabIndex = 18;
             // 
             // botonBuscarCliente
             // 
-            botonBuscarCliente.Location = new Point(108, 273);
+            botonBuscarCliente.Location = new Point(135, 341);
+            botonBuscarCliente.Margin = new Padding(4, 4, 4, 4);
             botonBuscarCliente.Name = "botonBuscarCliente";
-            botonBuscarCliente.Size = new Size(162, 83);
+            botonBuscarCliente.Size = new Size(202, 104);
             botonBuscarCliente.TabIndex = 17;
             botonBuscarCliente.Text = "Buscar";
             botonBuscarCliente.UseVisualStyleBackColor = true;
@@ -516,10 +537,11 @@ namespace GestionNegocio
             // 
             correoCliente.BorderStyle = BorderStyle.FixedSingle;
             correoCliente.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            correoCliente.Location = new Point(26, 213);
+            correoCliente.Location = new Point(32, 266);
+            correoCliente.Margin = new Padding(4, 4, 4, 4);
             correoCliente.Name = "correoCliente";
             correoCliente.PlaceholderText = "Correo";
-            correoCliente.Size = new Size(425, 34);
+            correoCliente.Size = new Size(531, 39);
             correoCliente.TabIndex = 16;
             // 
             // botonEliminarCliente
@@ -527,9 +549,10 @@ namespace GestionNegocio
             botonEliminarCliente.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             botonEliminarCliente.BackColor = Color.LightCoral;
             botonEliminarCliente.Font = new Font("Segoe UI", 12F);
-            botonEliminarCliente.Location = new Point(314, 462);
+            botonEliminarCliente.Location = new Point(392, 578);
+            botonEliminarCliente.Margin = new Padding(4, 4, 4, 4);
             botonEliminarCliente.Name = "botonEliminarCliente";
-            botonEliminarCliente.Size = new Size(137, 36);
+            botonEliminarCliente.Size = new Size(171, 45);
             botonEliminarCliente.TabIndex = 15;
             botonEliminarCliente.Text = "Eliminar";
             botonEliminarCliente.UseVisualStyleBackColor = false;
@@ -550,14 +573,15 @@ namespace GestionNegocio
             tablaClientes.Location = new Point(503, 55);
             tablaClientes.Name = "tablaClientes";
             tablaClientes.RowHeadersWidth = 51;
-            tablaClientes.Size = new Size(567, 443);
+            tablaClientes.Size = new Size(709, 554);
             tablaClientes.TabIndex = 14;
             // 
             // botonAgregarCliente
             // 
-            botonAgregarCliente.Location = new Point(289, 273);
+            botonAgregarCliente.Location = new Point(361, 341);
+            botonAgregarCliente.Margin = new Padding(4, 4, 4, 4);
             botonAgregarCliente.Name = "botonAgregarCliente";
-            botonAgregarCliente.Size = new Size(162, 83);
+            botonAgregarCliente.Size = new Size(202, 104);
             botonAgregarCliente.TabIndex = 13;
             botonAgregarCliente.Text = "Agregar";
             botonAgregarCliente.UseVisualStyleBackColor = true;
@@ -567,38 +591,42 @@ namespace GestionNegocio
             // 
             residenciaCliente.BorderStyle = BorderStyle.FixedSingle;
             residenciaCliente.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            residenciaCliente.Location = new Point(26, 158);
+            residenciaCliente.Location = new Point(32, 198);
+            residenciaCliente.Margin = new Padding(4, 4, 4, 4);
             residenciaCliente.Name = "residenciaCliente";
             residenciaCliente.PlaceholderText = "Residencia";
-            residenciaCliente.Size = new Size(425, 34);
+            residenciaCliente.Size = new Size(531, 39);
             residenciaCliente.TabIndex = 11;
             // 
             // edadCliente
             // 
             edadCliente.BorderStyle = BorderStyle.FixedSingle;
             edadCliente.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            edadCliente.Location = new Point(289, 105);
+            edadCliente.Location = new Point(361, 131);
+            edadCliente.Margin = new Padding(4, 4, 4, 4);
             edadCliente.Name = "edadCliente";
             edadCliente.PlaceholderText = "Edad";
-            edadCliente.Size = new Size(162, 34);
+            edadCliente.Size = new Size(202, 39);
             edadCliente.TabIndex = 10;
             // 
             // nombreCliente
             // 
             nombreCliente.BorderStyle = BorderStyle.FixedSingle;
             nombreCliente.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nombreCliente.Location = new Point(26, 55);
+            nombreCliente.Location = new Point(32, 69);
+            nombreCliente.Margin = new Padding(4, 4, 4, 4);
             nombreCliente.Name = "nombreCliente";
             nombreCliente.PlaceholderText = "Nombre del cliente";
-            nombreCliente.Size = new Size(425, 34);
+            nombreCliente.Size = new Size(531, 39);
             nombreCliente.TabIndex = 8;
             // 
             // pestanaFacturas
             // 
             pestanaFacturas.Controls.Add(textoProximamenteFacturas);
-            pestanaFacturas.Location = new Point(4, 37);
+            pestanaFacturas.Location = new Point(4, 41);
+            pestanaFacturas.Margin = new Padding(4, 4, 4, 4);
             pestanaFacturas.Name = "pestanaFacturas";
-            pestanaFacturas.Size = new Size(1106, 561);
+            pestanaFacturas.Size = new Size(1384, 707);
             pestanaFacturas.TabIndex = 2;
             pestanaFacturas.Text = "Facturas";
             pestanaFacturas.UseVisualStyleBackColor = true;
@@ -606,9 +634,10 @@ namespace GestionNegocio
             // textoProximamenteFacturas
             // 
             textoProximamenteFacturas.AutoSize = true;
-            textoProximamenteFacturas.Location = new Point(473, 262);
+            textoProximamenteFacturas.Location = new Point(591, 328);
+            textoProximamenteFacturas.Margin = new Padding(4, 0, 4, 0);
             textoProximamenteFacturas.Name = "textoProximamenteFacturas";
-            textoProximamenteFacturas.Size = new Size(145, 28);
+            textoProximamenteFacturas.Size = new Size(173, 32);
             textoProximamenteFacturas.TabIndex = 0;
             textoProximamenteFacturas.Text = "Proximamente";
             // 
@@ -620,8 +649,10 @@ namespace GestionNegocio
             pestanaAjustes.Controls.Add(botonGuardarCambiosAjustes);
             pestanaAjustes.Controls.Add(panelAjustesInterfaz);
             pestanaAjustes.Location = new Point(4, 37);
+            pestanaAjustes.Location = new Point(4, 41);
+            pestanaAjustes.Margin = new Padding(4, 4, 4, 4);
             pestanaAjustes.Name = "pestanaAjustes";
-            pestanaAjustes.Size = new Size(1106, 561);
+            pestanaAjustes.Size = new Size(1384, 707);
             pestanaAjustes.TabIndex = 3;
             pestanaAjustes.Text = "Ajustes";
             pestanaAjustes.UseVisualStyleBackColor = true;
@@ -764,16 +795,29 @@ namespace GestionNegocio
             labelPanelAdministrativo.Size = new Size(228, 31);
             labelPanelAdministrativo.TabIndex = 2;
             labelPanelAdministrativo.Text = "Panel Administrativo";
+            
+            // 
+            // buscarIdProducto
+            // 
+            buscarIdProducto.BorderStyle = BorderStyle.FixedSingle;
+            buscarIdProducto.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buscarIdProducto.Location = new Point(649, 29);
+            buscarIdProducto.Margin = new Padding(4);
+            buscarIdProducto.Name = "buscarIdProducto";
+            buscarIdProducto.PlaceholderText = "*Buscar ID";
+            buscarIdProducto.Size = new Size(151, 39);
+            buscarIdProducto.TabIndex = 9;
             // 
             // MenuPrincipal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1138, 703);
             Controls.Add(labelPanelAdministrativo);
             Controls.Add(controlPestanas);
             Controls.Add(nombreNegocio);
             ForeColor = SystemColors.ActiveCaptionText;
+            Margin = new Padding(4, 4, 4, 4);
             Name = "MenuPrincipal";
             Text = "Vista administrador";
             FormClosing += FormMenuPrincipal_FormClosing;
@@ -942,7 +986,6 @@ namespace GestionNegocio
         // componentes
         private TextBox nombreProducto;
         private TextBox cantidadProducto;
-        private TextBox marcaProducto;
         private TextBox precioProducto;
         private TextBox descripcionProducto;
         private Button botonAgregarProducto;
@@ -951,6 +994,21 @@ namespace GestionNegocio
         private Button botonBuscarProducto;
 
         // getters
+
+        public int GetIdProducto()
+        {
+            int idProducto;
+            if (int.TryParse(buscarIdProducto.Text.Trim(), out idProducto))
+            {
+                return idProducto;
+            }
+            else
+            {
+                MessageBox.Show("Introduzca un ID valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+        }
+
         public string GetNombreProducto()
         {
             return nombreProducto.Text.Trim();
@@ -973,7 +1031,7 @@ namespace GestionNegocio
         {
             decimal precio;
 
-            if (decimal.TryParse(cantidadProducto.Text.Trim(), out precio))
+            if (decimal.TryParse(precioProducto.Text.Trim(), out precio))
             {
                 return precio;
             }
@@ -982,10 +1040,6 @@ namespace GestionNegocio
                 MessageBox.Show("Introduzca un precio valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
-        }
-        public string GetMarcaProdudcto()
-        {
-            return marcaProducto.Text.Trim();
         }
         public string GetDescripcionProducto()
         {
@@ -1018,10 +1072,6 @@ namespace GestionNegocio
         public void LimpiarPrecioProducto()
         {
             precioProducto.Clear();
-        }
-        public void LimpiarMarcaProducto()
-        {
-            marcaProducto.Clear();
         }
         public void LimpiarDescripcionProducto()
         {
@@ -1085,6 +1135,7 @@ namespace GestionNegocio
                 return -1;
             }
         }
+
         public DataGridView GetTablaClientes()
         {
             return tablaClientes;
@@ -1221,6 +1272,6 @@ namespace GestionNegocio
         #endregion
 
 
-
+        private TextBox buscarIdProducto;
     }
 }

@@ -95,20 +95,28 @@ namespace GestionNegocio
 
             if (clienteCedula != -1 && clienteNombre != "" && clienteCorreo != "" && clienteEdad != -1 && clienteResidencia != "" && ValidarCorreo(clienteCorreo))
             {
-                if (cedulaClienteExiste(clienteCedula) == false)
+                if (!cedulaClienteExiste(clienteCedula) && !correoClienteExiste(clienteCorreo))
                 {
                     clientes.Add(clienteActual);
                     HerramientasCsv.AgregarCliente(rutaDeArchivoClientes, clienteActual);
-                    Console.WriteLine("Cliente registrado exitosamente");
+                    MessageBox.Show("Cliente registrado exitosamente, acceda al sistema iniciando sesion con su correo y contraseña");
                     LimpiarCedula();
                     LimpiarNombre();
-                    LimpiarCorreo();
+                    //LimpiarCorreo();
                     LimpiarEdad();
                     LimpiarResidencia();
+                    LimpiarContrasena();
                 }
                 else
                 {
-                    MessageBox.Show("El cliente ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (cedulaClienteExiste(clienteCedula))
+                    {
+                        MessageBox.Show("Error, ya existe un cliente con esta cedula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    if (correoClienteExiste(clienteCorreo))
+                    {
+                        MessageBox.Show("Error, ya existe un cliente con este correo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
@@ -116,18 +124,6 @@ namespace GestionNegocio
                 MessageBox.Show("Rellene los campos correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine("Error, cliente no agregado");
             }
-        }
-
-        private bool cedulaClienteExiste(long cedula)
-        {
-            foreach (Cliente cliente in clientes)
-            {
-                if (cliente.cedula == cedula)
-                {
-                    return true;
-                }
-            }
-            return false;
         }
 
         private void botonAdminCliente_Click(object sender, EventArgs e)
@@ -146,7 +142,34 @@ namespace GestionNegocio
 
         private void botonIniciarSesion_Click(object sender, EventArgs e)
         {
+            string clienteCorreo = GetCorreo();
+            string clienteContrasena = GetContrasena();
 
+
+            if (negocioExiste)
+            {
+                if (correoClienteExiste(clienteCorreo))
+                {
+                    foreach (Cliente cliente in clientes)
+                    {
+                        if (cliente.correo == clienteCorreo && clienteContrasena == cliente.contrasena)
+                        {
+                            vistaCliente vistaCliente = new vistaCliente(cliente, negocio);
+                            vistaCliente.Show();
+                            this.Hide();
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error, credenciales incorrectas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error, no existe un negocio registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void botonIngresar_Click(object sender, EventArgs e)
@@ -195,5 +218,36 @@ namespace GestionNegocio
 
         #endregion
 
+        // utilidades
+        private bool cedulaClienteExiste(long cedula)
+        {
+            foreach (Cliente cliente in clientes)
+            {
+                if (cliente.cedula == cedula)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool correoClienteExiste(string correo)
+        {
+            foreach (Cliente cliente in clientes)
+            {
+                if (cliente.correo == correo)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private void botonMostrarContrasena_Click(object sender, EventArgs e)
+        {
+            SetVisibilidadContrasena(!GetVisibilidadContrasena());
+        }
     }
 }

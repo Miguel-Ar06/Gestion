@@ -48,6 +48,7 @@ namespace GestionNegocio
             botonAdminCliente = new Button();
             textBoxCredencial = new TextBox();
             textBoxCedula = new TextBox();
+            botonMostrarContrasena = new Button();
             ((System.ComponentModel.ISupportInitialize)iconoNegocioMaterial).BeginInit();
             SuspendLayout();
             // 
@@ -158,8 +159,9 @@ namespace GestionNegocio
             textBoxContrasena.Location = new Point(438, 388);
             textBoxContrasena.Name = "textBoxContrasena";
             textBoxContrasena.PlaceholderText = "Contraseña";
-            textBoxContrasena.Size = new Size(270, 27);
+            textBoxContrasena.Size = new Size(193, 27);
             textBoxContrasena.TabIndex = 10;
+            textBoxContrasena.UseSystemPasswordChar = true;
             // 
             // textBoxResidencia
             // 
@@ -243,11 +245,26 @@ namespace GestionNegocio
             textBoxCedula.Size = new Size(133, 27);
             textBoxCedula.TabIndex = 17;
             // 
+            // botonMostrarContrasena
+            // 
+            botonMostrarContrasena.Anchor = AnchorStyles.Top;
+            botonMostrarContrasena.BackColor = SystemColors.ControlLightLight;
+            botonMostrarContrasena.ForeColor = SystemColors.ActiveCaptionText;
+            botonMostrarContrasena.Location = new Point(637, 388);
+            botonMostrarContrasena.Name = "botonMostrarContrasena";
+            botonMostrarContrasena.Size = new Size(71, 27);
+            botonMostrarContrasena.TabIndex = 18;
+            botonMostrarContrasena.Text = "Mostrar";
+            botonMostrarContrasena.UseVisualStyleBackColor = false;
+            botonMostrarContrasena.Visible = false;
+            botonMostrarContrasena.Click += botonMostrarContrasena_Click;
+            // 
             // PantallaDeBienvenida
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1137, 719);
+            Controls.Add(botonMostrarContrasena);
             Controls.Add(textBoxCedula);
             Controls.Add(textBoxCredencial);
             Controls.Add(botonAdminCliente);
@@ -354,6 +371,10 @@ namespace GestionNegocio
         {
             return textBoxResidencia.Text.Trim();
         }
+        public bool GetVisibilidadContrasena()
+        {
+            return textBoxContrasena.UseSystemPasswordChar;
+        }
 
         // setters
         public void SetColorBotonBienvenida(Color colorFondo, Color colorTexto)
@@ -380,6 +401,7 @@ namespace GestionNegocio
             botonIniciarSesion.Visible = !valor;
             botonRegistrarse.Visible = !valor;
             textBoxCedula.Visible = !valor;
+            botonMostrarContrasena.Visible = !valor;
         }
         public void LimpiarCedula()
         {
@@ -391,7 +413,7 @@ namespace GestionNegocio
         }
         public void LimpiarCorreo()
         {
-            textBoxNombre.Clear();
+            textBoxCorreo.Clear();
         }
         public void LimpiarEdad()
         {
@@ -400,6 +422,14 @@ namespace GestionNegocio
         public void LimpiarResidencia()
         {
             textBoxResidencia.Clear();
+        }
+        public void LimpiarContrasena()
+        {
+            textBoxContrasena.Clear();
+        }
+        public void SetVisibilidadContrasena(bool valor)
+        {
+            textBoxContrasena.UseSystemPasswordChar = valor;
         }
 
         // utilidades
@@ -415,5 +445,7 @@ namespace GestionNegocio
                 return false;
             }
         }
+
+        private Button botonMostrarContrasena;
     }
 }

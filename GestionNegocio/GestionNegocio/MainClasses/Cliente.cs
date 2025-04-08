@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionNegocio.MainClasses
 {
-    internal class Cliente
+    public class Cliente
     {
         private long Cedula;
         public long cedula 

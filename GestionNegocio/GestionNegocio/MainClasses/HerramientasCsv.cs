@@ -250,7 +250,7 @@ namespace GestionNegocio.MainClasses
         public static void AgregarCliente(string rutaArchivo, Cliente cliente)
         {
             List<string[]> lineas = LeerTodasLasLineas(rutaArchivo);
-            string[] nuevaLinea = new string[5];
+            string[] nuevaLinea = new string[6];
 
             nuevaLinea[0] = cliente.cedula.ToString();
             nuevaLinea[1] = cliente.nombre;
@@ -303,7 +303,7 @@ namespace GestionNegocio.MainClasses
 
         public static string[] ClienteALinea(Cliente cliente)
         {
-            string[] nuevaLinea = new string[5];
+            string[] nuevaLinea = new string[6];
 
             nuevaLinea[0] = cliente.cedula.ToString();
             nuevaLinea[1] = cliente.nombre;
@@ -341,7 +341,7 @@ namespace GestionNegocio.MainClasses
 
             foreach (Cliente cliente in clientes)
             {
-                string[] nuevaLinea = new string[5];
+                string[] nuevaLinea = new string[6];
                 nuevaLinea[0] = cliente.cedula.ToString();
                 nuevaLinea[1] = cliente.nombre;
                 nuevaLinea[2] = cliente.correo;

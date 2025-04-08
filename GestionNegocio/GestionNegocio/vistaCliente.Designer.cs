@@ -85,6 +85,7 @@
             botonCompletarCompra = new Button();
             controlPestanas = new TabControl();
             labelNombreClienteInterfaz = new Label();
+            botonRegresar = new Button();
             pestanaAjustes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tablaCuponesDisponibles).BeginInit();
             pestanaHistorial.SuspendLayout();
@@ -138,6 +139,7 @@
             // 
             // botonGuardarCambios
             // 
+            botonGuardarCambios.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             botonGuardarCambios.Location = new Point(31, 515);
             botonGuardarCambios.Name = "botonGuardarCambios";
             botonGuardarCambios.Size = new Size(183, 41);
@@ -248,6 +250,7 @@
             // 
             // botonEditarCliente
             // 
+            botonEditarCliente.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             botonEditarCliente.Location = new Point(994, 515);
             botonEditarCliente.Name = "botonEditarCliente";
             botonEditarCliente.Size = new Size(137, 41);
@@ -495,6 +498,7 @@
             // 
             // botonEliminarDescuento
             // 
+            botonEliminarDescuento.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             botonEliminarDescuento.BackColor = Color.PaleVioletRed;
             botonEliminarDescuento.Font = new Font("Segoe UI", 12F);
             botonEliminarDescuento.Location = new Point(984, 309);
@@ -645,6 +649,7 @@
             // 
             // botonEliminarCarrito
             // 
+            botonEliminarCarrito.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             botonEliminarCarrito.BackColor = Color.PaleVioletRed;
             botonEliminarCarrito.Font = new Font("Segoe UI", 12F);
             botonEliminarCarrito.Location = new Point(984, 44);
@@ -656,6 +661,7 @@
             // 
             // botonCompletarCompra
             // 
+            botonCompletarCompra.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             botonCompletarCompra.BackColor = Color.LightGreen;
             botonCompletarCompra.Font = new Font("Segoe UI", 12F);
             botonCompletarCompra.Location = new Point(898, 479);
@@ -683,17 +689,29 @@
             // 
             labelNombreClienteInterfaz.AutoSize = true;
             labelNombreClienteInterfaz.Font = new Font("Segoe UI Semibold", 24F, FontStyle.Bold);
-            labelNombreClienteInterfaz.Location = new Point(16, 12);
+            labelNombreClienteInterfaz.Location = new Point(72, 12);
             labelNombreClienteInterfaz.Name = "labelNombreClienteInterfaz";
             labelNombreClienteInterfaz.Size = new Size(373, 54);
             labelNombreClienteInterfaz.TabIndex = 4;
             labelNombreClienteInterfaz.Text = "Nombre Del cliente";
+            // 
+            // botonRegresar
+            // 
+            botonRegresar.Font = new Font("Segoe UI", 18F);
+            botonRegresar.Location = new Point(16, 15);
+            botonRegresar.Name = "botonRegresar";
+            botonRegresar.Size = new Size(50, 54);
+            botonRegresar.TabIndex = 5;
+            botonRegresar.Text = "←";
+            botonRegresar.UseVisualStyleBackColor = true;
+            botonRegresar.Click += botonRegresar_Click;
             // 
             // vistaCliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1194, 703);
+            Controls.Add(botonRegresar);
             Controls.Add(labelNombreClienteInterfaz);
             Controls.Add(controlPestanas);
             Controls.Add(nombreNegocio);
@@ -771,5 +789,6 @@
         public Label labelContrasenaNueva;
         public Button botonGuardarCambios;
         public DataGridView tablaDeCarrito;
+        private Button botonRegresar;
     }
 }

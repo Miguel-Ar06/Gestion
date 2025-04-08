@@ -65,5 +65,10 @@ namespace GestionNegocio
         {
             Application.Exit();
         }
+
+        private void botonRegresar_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

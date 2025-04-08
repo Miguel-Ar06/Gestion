@@ -438,7 +438,7 @@ namespace GestionNegocio
         }
         private void botonBuscarProducto_Click(object sender, EventArgs e)
         {
-            int idBuscado = GetIdProducto(); 
+            int idBuscado = GetIdProducto();
 
             if (idBuscado != -1)
             {
@@ -661,6 +661,11 @@ namespace GestionNegocio
         private void FormMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit(); // Cierra la aplicación por completo
+        }
+
+        private void botonRegresar_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
